@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# Search A and replace with B in files C.
+#
+
+if [ -z $1 ]; then
+echo Search for what?
+exit
+fi
+
+if [ -z $3 ]; then
+echo In what files?
+exit
+fi
+
+for filex in $3
+do
+    ex - ${filex} <<EOF   
+%s/$1/$2/g
+wq!
+EOF
+done 
+echo $1 replaced with $2 in $3.
+exit
+

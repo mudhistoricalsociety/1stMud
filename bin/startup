@@ -1,0 +1,94 @@
+#!/bin/sh
+#
+# Start 1stMud Services
+#
+# description:  Starts/stops 1stMud Services
+#
+
+BINARY=../bin/1stMud
+PID_FILE=$BINARY.pid
+SHUTDOWN_FILE=../data/shutdown.txt
+ARGLIST="$2 $3 $4 $5 $6 $7 $8 $9"
+
+# Function declarations
+#
+start_mud() {
+  while [ 1 ]; do
+    $BINARY --startup-script $ARGLIST > /dev/null 2>&1 &
+    RUN_PID="$!"
+    echo $RUN_PID > $PID_FILE
+
+    wait $RUN_PID
+#    RUN_EC="$?"
+#    if [ "$RUN_EC" = "1" ]; then
+#      exit 0
+#    fi
+    if [ -r $SHUTDOWN_FILE ]; then
+	rm -f $SHUTDOWN_FILE;
+	exit 0
+    fi
+  done
+}
+
+# Run the code
+#
+STATUS=""
+if [ -r $PID_FILE ]; then
+  PID=`cat $PID_FILE`
+
+  if [ -n "$PID" ]; then 
+    STATUS=`ps $PID | grep $PID`
+  fi
+fi
+
+case "$1" in
+status)
+  if [ -n "$STATUS" ]; then
+    echo "1stMud is running."
+  else
+    echo "1stMud is NOT running."
+  fi
+  ;;
+
+start)
+  if [ -n "$STATUS" ]; then
+    echo "1stMud is ALREADY running."
+    exit
+  fi
+
+  echo "Starting 1stMud Services..."
+  start_mud &
+  ;;
+
+stop)
+  if [ -z "$STATUS" ]; then
+    echo "1stMud is NOT running ALREADY."
+    exit
+  fi
+
+  echo "Stopping 1stMud Services..."
+  kill -s SIGTERM $PID
+  sleep 1
+
+  rm -f $PID_FILE
+
+  STATUS=`ps $PID | grep $PID`
+  if [ -n "$STATUS" ]; then sleep 1; fi
+
+  STATUS=`ps $PID | grep $PID`
+  if [ -n "$STATUS" ]; then sleep 1; fi
+
+  STATUS=`ps $PID | grep $PID`
+  if [ -n "$STATUS" ]; then kill -s SIGKILL $PID; fi
+  ;;
+
+restart)
+  $0 stop $ARGLIST
+  $0 start $ARGLIST
+  ;;
+
+*)
+  echo "Usage: $0 {start|stop|restart|status}"
+  echo ""
+  ;;
+esac

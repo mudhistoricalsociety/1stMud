@@ -1,0 +1,237 @@
+#AREADATA
+Name			Limbo~
+Builders		None~
+VNUMs			1 99
+Credits			Diku~
+LvlComment		None~
+Version			4
+Security		9
+Climate			2 2 2
+Stats			0 0END
+
+
+#MOBILES
+#30
+dummy mob~
+a dummy mobile~
+A dummy mobile is here.
+~
+~
+Human~
++YY +n 0 0
+60 0 0 59
+85d71+1073 62d8+61 7d12+48 'none'
+-47 -47 -47 -41
++n +n +n +n
+standing standing either 0
++YnnnnnnYnnnnYnnnnnnnnY +YYYYYYYYYYY medium 'unknown'
+#0
+
+#OBJECTS
+#1
+coin silver gcash~
+A silver coin~
+One miserable silver coin.~
+silver~
+money +n +Y
++Y +n +n +n +n
+0 10 0 P
+#2
+coin gold gcash~
+A gold coin~
+One valuable gold coin.~
+gold~
+money +n +Y
++n +Y +n +n +n
+0 10 0 P
+#3
+coins gold gcash~
+%d gold coins~
+A pile of gold coins.~
+gold~
+money +n +Y
++n +n +n +n +n
+0 10 0 P
+#4
+coins silver gcash~
+%d silver coins~
+A pile of silver coins.~
+silver~
+money +n +Y
++n +n +n +n +n
+0 10 0 P
+#5
+coins silver gold gcash~
+%d silver coins and %d gold coins~
+A pile of coins.~
+gold~
+money +n +Y
++n +n +n +n +n
+0 10 0 P
+#10
+corpse~
+The corpse of %s~
+The corpse of %s is lying here.~
+meat~
+npc_corpse +n +Y
++n +n +n +Y +n
+0 1000 0 D
+#11
+corpse~
+The corpse of %s~
+The corpse of %s is lying here.~
+meat~
+pc_corpse +nnnnnnnnnnnnnnY +Y
++n +n +n +Y +n
+0 1000 0 D
+#12
+head~
+The head of %s~
+The severed head of %s is lying here.~
+meat~
+trash +n +Y
++n +n +n +n +n
+0 50 0 D
+#13
+heart~
+The heart of %s~
+The torn-out heart of %s is lying here.~
+meat~
+food +n +Y
++nnnnY +nnnnY +n +n +n
+0 20 0 D
+#14
+arm~
+The arm of %s~
+The sliced-off arm of %s is lying here.~
+meat~
+food +n +Y
++nnYnY +nnYnY +n +n +n
+0 50 0 D
+#15
+leg~
+The leg of %s~
+The sliced-off leg of %s is lying here.~
+meat~
+food +n +Y
++nnYnY +nnYnY +n +n +n
+0 50 0 D
+#16
+guts entrails~
+The guts of %s~
+A steaming pile of %s's entrails is lying here.~
+meat~
+food +n +Y
++YnY +YnY +n +Y +n
+0 20 0 D
+#17
+brains brain~
+The brains of %s~
+The splattered brains of %s are lying here.~
+meat~
+food +n +Y
++nYnY +nYnY +n +n +n
+0 20 0 D
+#20
+mushroom~
+A Magic Mushroom~
+A delicious magic mushroom is here.~
+food~
+food +n +Y
++nnnY +nnnY +n +n +n
+0 10 0 P
+#21
+ball light~
+A bright ball of light~
+A bright ball of light shimmers in the air.~
+energy~
+light +Y +Y
++n +n +n +n +n
+0 0 0 P
+#22
+spring~
+A magical spring~
+A magical spring flows from the ground here.~
+water~
+fountain +nnnnnnY +n
+100000 100000 'water' 0 0
+0 0 0 P
+#23
+disc disk floating black~
+A floating disc~
+A floating black disc hangs in the air.~
+energy~
+container +nnnnnnYnnnnnYnnYnnnnYnnnYY +YnnnnnnnnnnnnnnnY
+0 +nnnnY 0 0 0
+0 0 0 P
+#25
+gate portal~
+A shimmering gate~
+A shimmering black gate rises from the ground, leading to parts unknown.~
+shadow~
+portal +nnnnnnYnnnnnnnYnnnnY +n
++n +n +n +n +n
+0 0 0 P
+#30
+dummy object~
+A dummy object~
+Dummy object is used for loading non-existent objects~
+~
+trash +n +n
++n +n +n +n +n
+0 0 0 P
+#0
+
+#ROOMS
+#1
+The Void~
+You are floating in nothing.
+~
+0 +nnYY 1
+S
+#2
+Limbo~
+You are floating in a formless void, detached from all sensation of physical
+matter, surrounded by swirling glowing light, which fades into the relative
+darkness around you without any trace of edges or shadow.
+   There is a "No Tipping" notice pinned to the darkness.
+~
+0 +nnnY 1
+D4
+~
+~
++n -1 3001
+S
+#3
+The Morgue~
+Here lies marble tabletops holding coffins and empty bodies.  
+~
+0 +nnnYnnnnnnYnnnnnnnYnnnY 0
+D4
+~
+~
++n 0 3054
+S
+#0
+
+#SPECIALS
+S
+
+#RESETS
+O 0 3415 0 3
+R 0 3 1 0
+S
+
+#SHOPS
+0
+
+#MOBPROGS
+#0
+
+#OBJPROGS
+#0
+
+#ROOMPROGS
+#0
+
+#$

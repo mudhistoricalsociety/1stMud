@@ -1,0 +1,18 @@
+${CONFIG}/configure: ${CONFIG}/configure.in
+	@cd ${CONFIG} && autoconf
+
+# autoheader might not change config.h.in, so touch a stamp file.
+${CONFIG}/config.h.in: ${CONFIG}/stamp-h.in
+${CONFIG}/stamp-h.in: ${CONFIG}/configure.in
+	@cd ${CONFIG} && autoheader
+	@date > ${CONFIG}/stamp-h.in
+
+${incdir}/config.h: ${CONFIG}/stamp-h
+${CONFIG}/stamp-h: ${CONFIG}/config.h.in ${CONFIG}/config.status
+	@cd ${CONFIG} && ./config.status
+
+Makefile: ${CONFIG}/Makefile.in ${CONFIG}/config.status
+	@cd ${CONFIG} && ./config.status
+
+${CONFIG}/config.status: ${CONFIG}/configure
+	@cd ${CONFIG} && ./config.status --recheck

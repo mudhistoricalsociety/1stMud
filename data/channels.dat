@@ -1,0 +1,122 @@
+10
+
+#CHANNEL
+index			gcn_ooc~
+color			{W~
+custom_color		-1
+format			{C({wOOC{C)~
+bit			noooc~
+spec_flag		public~
+page_length		20
+name			ooc~
+description		Out Of Character discussions.~
+#END
+
+#CHANNEL
+index			gcn_buddy~
+color			~
+custom_color		28
+format			{W{{{BBuddy{W}~
+bit			nobuddy~
+spec_flag		public~
+page_length		20
+name			btalk~
+description		A private channel that only transmits within buddies.~
+#END
+
+#CHANNEL
+index			gcn_gossip~
+color			~
+custom_color		2
+format			{G({mGossip{G)~
+bit			nogossip~
+spec_flag		public~
+page_length		20
+name			gossip~
+description		Channel used in roleplay discussions.~
+#END
+
+#CHANNEL
+index			gcn_immtalk~
+color			~
+custom_color		19
+format			{c[{yImmtalk{c]~
+bit			nowiz~
+spec_flag		immortal~
+page_length		20
+name			immtalk~
+description		A channel for immortal only.~
+#END
+
+#CHANNEL
+index			gcn_clan~
+color			{W~
+custom_color		-1
+format			%s{W (%s)~
+bit			noclangossip~
+spec_flag		public~
+page_length		20
+name			clan~
+description		A channel for those in the same clan.~
+#END
+
+#CHANNEL
+index			gcn_quote~
+color			~
+custom_color		11
+format			{R({GQuote{R)~
+bit			noquote~
+spec_flag		public~
+page_length		20
+name			quote~
+description		A global channel for "quoting" someone or something.~
+#END
+
+#CHANNEL
+index			gcn_grats~
+color			~
+custom_color		14
+format			{W({YGratz{W)~
+bit			nograts~
+spec_flag		public~
+page_length		20
+name			grats~
+description		A global channel for congratulating someone or something.~
+#END
+
+#CHANNEL
+index			gcn_music~
+color			~
+custom_color		5
+format			{W({rMusic{W)~
+bit			nomusic~
+spec_flag		public~
+page_length		20
+name			music~
+description		Channel to sing on.~
+#END
+
+#CHANNEL
+index			gcn_qa~
+color			~
+custom_color		8
+format			{w({YQ/A{w)~
+bit			noquestion~
+spec_flag		public~
+page_length		20
+name			q/a~
+description		Channel for questions and answers.~
+#END
+
+#CHANNEL
+index			gcn_barter~
+color			{Y~
+custom_color		-1
+format			{y[BARTER]~
+bit			none~
+spec_flag		public~
+page_length		20
+name			barter~
+description		A channel used to barter wares and auctions.~
+#END
+#!

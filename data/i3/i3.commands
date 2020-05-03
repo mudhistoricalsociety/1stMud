@@ -1,0 +1,353 @@
+
+#I3CMD
+name			i3~
+args			~
+descr			~
+function		I3_other~
+level			Mort~
+connected		false
+#END
+
+#I3CMD
+name			i3help~
+args			~
+descr			~
+function		i3_help~
+level			Mort~
+connected		false
+#END
+
+#I3CMD
+name			i3listen~
+args			<localchannel>~
+descr			To tune into a channel.~
+function		I3_listen_channel~
+level			Mort~
+connected		true
+#END
+
+#I3CMD
+name			i3afk~
+args			~
+descr			Toggles AFK on i3 network.~
+function		I3_afk~
+level			Mort~
+connected		false
+#END
+
+#I3CMD
+name			i3chanlist~
+args			[all] [filter]~
+descr			List channels available.~
+function		I3_chanlist~
+level			Mort~
+connected		true
+#END
+
+#I3CMD
+name			i3mudlist~
+args			[filter]~
+descr			List muds connected to I3.~
+function		I3_mudlist~
+level			Mort~
+connected		true
+#END
+
+#I3CMD
+name			i3chanwho~
+args			<channel> <mud>~
+descr			To see who is listening on another mud.~
+function		I3_chan_who~
+level			Mort~
+connected		true
+#END
+
+#I3CMD
+name			i3mudinfo~
+args			<mud>~
+descr			Information on another mud.~
+function		I3_mudinfo~
+level			Mort~
+connected		true
+#END
+
+#I3CMD
+name			i3invis~
+args			~
+descr			Make yourself invisible to I3.~
+function		I3_invis~
+level			Mort~
+connected		false
+#END
+
+#I3CMD
+name			i3who~
+args			<mud>~
+descr			Who is on a mud on I3?~
+function		I3_who~
+level			Mort~
+connected		true
+#END
+
+#I3CMD
+name			i3finger~
+args			<name@mud>~
+descr			Details for a person on an I3 mud.~
+function		I3_finger~
+level			Mort~
+connected		true
+#END
+
+#I3CMD
+name			i3locate~
+args			<name>~
+descr			Locate a person on I3.~
+function		I3_locate~
+level			Mort~
+connected		true
+#END
+
+#I3CMD
+name			i3tell~
+args			<name@mud>~
+descr			Tell someone on I3 something.~
+function		I3_tell~
+level			Mort~
+connected		true
+#END
+
+#I3CMD
+name			i3reply~
+args			<name@mud>~
+descr			Reply to an i3tell.~
+function		I3_reply~
+level			Mort~
+connected		true
+#END
+
+#I3CMD
+name			i3emote~
+args			<name@mud> <emote>~
+descr			Emote to someone on I3.~
+function		I3_emote~
+level			Mort~
+connected		true
+#END
+
+#I3CMD
+name			i3beep~
+args			<name@mud>~
+descr			Beep someone on I3.~
+function		I3_beep~
+level			Mort~
+connected		true
+#END
+
+#I3CMD
+name			i3ignore~
+args			<name@mud>~
+descr			Ignore someone who annoys you.~
+function		I3_ignorecmd~
+level			Mort~
+connected		false
+#END
+
+#I3CMD
+name			i3color~
+args			~
+descr			Toggle I3 color.~
+function		I3_color~
+level			Mort~
+connected		false
+alias_first		i3colour~
+#END
+
+#I3CMD
+name			i3connect~
+args			[router-name]~
+descr			Connect to the Intermud-3 network.~
+function		I3_connect~
+level			Imm~
+connected		false
+#END
+
+#I3CMD
+name			i3disconnect~
+args			~
+descr			Disconnect from the Intermud-3 network.~
+function		I3_disconnect~
+level			Imm~
+connected		true
+#END
+
+#I3CMD
+name			i3user~
+args			<name@mud>~
+descr			User request.~
+function		I3_send_user_req~
+level			Imm~
+connected		true
+#END
+
+#I3CMD
+name			i3ucache~
+args			~
+descr			Local I3 user cache.~
+function		I3_show_ucache_contents~
+level			Imm~
+connected		true
+#END
+
+#I3CMD
+name			i3perms~
+args			<user>~
+descr			I3 permissions for a user.~
+function		I3_permstats~
+level			Imm~
+connected		false
+#END
+
+#I3CMD
+name			i3deny~
+args			<user> <localchannel>~
+descr			Deny a user access to an I3 channel.~
+function		I3_deny_channel~
+level			Imm~
+connected		true
+#END
+
+#I3CMD
+name			i3permset~
+args			<user> <permission>~
+descr			Toggle persmissions for a user.~
+function		I3_permset~
+level			Admin~
+connected		false
+#END
+
+#I3CMD
+name			i3setchan~
+args			<i3name> <localname>~
+descr			Set a name for a channel.~
+function		I3_setup_channel~
+level			Admin~
+connected		true
+#END
+
+#I3CMD
+name			i3chanlayout~
+args			<localchannel> <message> <emote>~
+descr			Setup the layout of a channel.~
+function		I3_chanlayout~
+level			Admin~
+connected		true
+#END
+
+#I3CMD
+name			i3addchan~
+args			<channelname> <localname> <type>~
+descr			Add a channel.~
+function		I3_addchan~
+level			Admin~
+connected		true
+#END
+
+#I3CMD
+name			i3removechan~
+args			<channelname>~
+descr			Remove a channel.~
+function		I3_removechan~
+level			Admin~
+connected		true
+#END
+
+#I3CMD
+name			i3adminchan~
+args			<localchannel>~
+descr			Administer who recieves channel on I3.~
+function		I3_admin_channel~
+level			Admin~
+connected		true
+#END
+
+#I3CMD
+name			i3editchan~
+args			<localchannel>~
+descr			Edit a channel.~
+function		I3_edit_channel~
+level			Admin~
+connected		true
+#END
+
+#I3CMD
+name			i3ban~
+args			<user@mud|*ip>~
+descr			Ban someone on I3.~
+function		I3_bancmd~
+level			Admin~
+connected		false
+#END
+
+#I3CMD
+name			i3config~
+args			<option> [args]~
+descr			Configure your I3 setup.~
+function		I3_setconfig~
+level			Admin~
+connected		false
+#END
+
+#I3CMD
+name			i3mudlisten~
+args			<localchannel>~
+descr			Make an I3 channel public to the mud.~
+function		I3_mudlisten~
+level			Admin~
+connected		true
+#END
+
+#I3CMD
+name			i3stats~
+args			~
+descr			General statistics.~
+function		I3_stats~
+level			Admin~
+connected		false
+#END
+
+#I3CMD
+name			i3hedit~
+args			<topic> [name|perm] <field>~
+descr			Editor for intermud3 helps.~
+function		i3_hedit~
+level			Admin~
+connected		false
+#END
+
+#I3CMD
+name			i3cedit~
+args			<command> <arg> <field>~
+descr			Editor for intermud3 commands.~
+function		i3_cedit~
+level			Imp~
+connected		false
+#END
+
+#I3CMD
+name			i3router~
+args			[add|remove|list]~
+descr			I3 router admin.~
+function		I3_router~
+level			Imp~
+connected		false
+#END
+
+#I3CMD
+name			i3debug~
+args			~
+descr			Toggle packet debugging.~
+function		I3_debug~
+level			Imp~
+connected		false
+#END
+#!

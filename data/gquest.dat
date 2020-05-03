@@ -1,0 +1,15 @@
+
+#GQUEST
+mob_count		0
+who			~
+timer			0
+involved		0
+qpoints			0
+gold			0
+minlevel		0
+maxlevel		0
+running			0
+cost			0
+mobs			@
+#END
+#!

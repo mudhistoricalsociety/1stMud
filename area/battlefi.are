@@ -1,0 +1,1141 @@
+#AREADATA
+Name			The Battlefield~
+Builders		None~
+VNUMs			17600 17699
+Credits			1stMud~
+LvlComment		All~
+Version			4
+Security		9
+Climate			2 2 2
+Flags			+nnY
+Stats			0 0END
+
+
+#MOBILES
+#17600
+nurse betty~
+Nurse Betty~
+A blond woman in a white outfit is here tending your wounds.
+~
+A tall blonde stands here at 6'3", blue eyes radiating
+intelligence and compasion look at you in a messuring
+way. Without even saying a word, with just a look she
+lets you know that you haven't a chance in Hell in
+getting to know her better.
+~
+Human~
++YYnnnnYnnnnnnnnnnnnnnnnnnnY +nnnYnYnnnYnnnnnnnnnnnnnnnY 1000 0
+206 0 0 292
+40d35+177 29d12+95 33d14+28 'none'
+-379 -379 -379 -349
++n +nnYYnnnnnnnnnnnnnnnY +n +n
+standing standing female 418
++YnnnnnnYnnnnYnnnnnnnnY +YYYYYYYYYYY medium 'unknown'
+#17601
+warmaster~
+The WarMaster~
+The WarMaster is here.
+~
+He is the battled veteren of all the arena's in Thera.  He runs and
+manages war affairs in Midgaard.
+~
+Dragon~
++YYnnnnYYnnnnnnnYYYYYnnnYnY +nnnYnYnYnYnnnYYnnnnYnYnnnnYnYnYYYYnnnnY 0 0
+205 0 0 198
+35d29+126 24d12+93 28d14+24 'slice'
+-297 -297 -297 -271
++YYYYnYnYYYYnnYY +n +nYnnYnnY +nnnnnYnnY
+standing standing either 361
++YnnnnnnYnnnnnnnnnnnnnnnnnY +YnYYYYYYYYYnnnnYYnnnYYYY medium 'unknown'
+#0
+
+#OBJECTS
+#17600
+leather couch~
+A leather couch~
+A comfy looking leather couch is here.~
+unknown~
+furniture +nnnnnnnnY +n
++nYnnYY +nnnnnYnnYnnnnYnYYYY +nnnnYnnYnnY +nnYnYYYYY +nnYnYYYYY
+1 100 -24288 P
+#0
+
+#ROOMS
+#17600
+Waiting Room~
+Gentle muzak filters in from hidden speakers in the walls.  A large
+leather couch is here to help you rest up before the battle.  A nurse is
+walking around tending to you to make sure that when you head into the
+Battlefield to get the shit kicked out of you, you at least have a fighting
+chance.  
+~
+0 +nnYYnnnnnnYnnYnnnnYnnnnnY 0
+S
+#17601
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D2
+~
+~
++n 0 17604
+D3
+~
+~
++n 0 17611
+D0
+~
+~
++n 0 17635
+D1
+~
+~
++n 0 17602
+S
+#17602
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17628
+D1
+~
+~
++n 0 17605
+D2
+~
+~
++n 0 17603
+D3
+~
+~
++n 0 17601
+S
+#17603
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17602
+D1
+~
+~
++n 0 17608
+D2
+~
+~
++n 0 17614
+D3
+~
+~
++n 0 17604
+S
+#17604
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17601
+D1
+~
+~
++n 0 17603
+D2
+~
+~
++n 0 17613
+D3
+~
+~
++n 0 17622
+S
+#17605
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17627
+D1
+~
+~
++n 0 17606
+D3
+~
+~
++n 0 17602
+D2
+~
+~
++n 0 17608
+S
+#17606
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17632
+D1
+~
+~
++n 0 17609
+D2
+~
+~
++n 0 17607
+D3
+~
+~
++n 0 17605
+S
+#17607
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17606
+D1
+~
+~
++n 0 17612
+D2
+~
+~
++n 0 17618
+D3
+~
+~
++n 0 17608
+S
+#17608
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17605
+D1
+~
+~
++n 0 17607
+D2
+~
+~
++n 0 17617
+D3
+~
+~
++n 0 17603
+S
+#17609
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17631
+D1
+~
+~
++n 0 17610
+D2
+~
+~
++n 0 17612
+D3
+~
+~
++n 0 17606
+S
+#17610
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D3
+~
+~
++n 0 17609
+D0
+~
+~
++n 0 17636
+D2
+~
+~
++n 0 17611
+D1
+~
+~
++n 0 17628
+S
+#17611
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17610
+D1
+~
+~
++n 0 17601
+D2
+~
+~
++n 0 17622
+D3
+~
+~
++n 0 17612
+S
+#17612
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17609
+D1
+~
+~
++n 0 17611
+D2
+~
+~
++n 0 17621
+D3
+~
+~
++n 0 17607
+S
+#17613
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17604
+D1
+~
+~
++n 0 17614
+D2
+~
+~
++n 0 17616
+D3
+~
+~
++n 0 17623
+S
+#17614
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17603
+D1
+~
+~
++n 0 17617
+D2
+~
+~
++n 0 17615
+D3
+~
+~
++n 0 17613
+S
+#17615
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D3
+~
+~
++n 0 17616
+D2
+~
+~
++n 0 17626
+D1
+~
+~
++n 0 17620
+D0
+~
+~
++n 0 17614
+S
+#17616
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D1
+~
+~
++n 0 17615
+D3
+~
+~
++n 0 17634
+D2
+~
+~
++n 0 17625
+D0
+~
+~
++n 0 17613
+S
+#17617
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17608
+D1
+~
+~
++n 0 17618
+D2
+~
+~
++n 0 17620
+D3
+~
+~
++n 0 17614
+S
+#17618
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17607
+D1
+~
+~
++n 0 17621
+D2
+~
+~
++n 0 17619
+D3
+~
+~
++n 0 17617
+S
+#17619
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17618
+D1
+~
+~
++n 0 17624
+D2
+~
+~
++n 0 17630
+D3
+~
+~
++n 0 17620
+S
+#17620
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17617
+D1
+~
+~
++n 0 17619
+D2
+~
+~
++n 0 17629
+D3
+~
+~
++n 0 17615
+S
+#17621
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D3
+~
+~
++n 0 17618
+D0
+~
+~
++n 0 17612
+D2
+~
+~
++n 0 17624
+D1
+~
+~
++n 0 17622
+S
+#17622
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17611
+D1
+~
+~
++n 0 17604
+D2
+~
+~
++n 0 17623
+D3
+~
+~
++n 0 17621
+S
+#17623
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17622
+D1
+~
+~
++n 0 17613
+D2
+~
+~
++n 0 17634
+D3
+~
+~
++n 0 17624
+S
+#17624
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17621
+D1
+~
+~
++n 0 17623
+D2
+~
+~
++n 0 17633
+D3
+~
+~
++n 0 17619
+S
+#17625
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17616
+D1
+~
+~
++n 0 17626
+D2
+~
+~
++n 0 17628
+D3
+~
+~
++n 0 17635
+S
+#17626
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D1
+~
+~
++n 0 17629
+D3
+~
+~
++n 0 17625
+D0
+~
+~
++n 0 17615
+D2
+~
+~
++n 0 17627
+S
+#17627
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17626
+D1
+~
+~
++n 0 17632
+D2
+~
+~
++n 0 17605
+D3
+~
+~
++n 0 17628
+S
+#17628
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17625
+D1
+~
+~
++n 0 17627
+D2
+~
+~
++n 0 17602
+D3
+~
+~
++n 0 17610
+S
+#17629
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17620
+D1
+~
+~
++n 0 17630
+D2
+~
+~
++n 0 17632
+D3
+~
+~
++n 0 17626
+S
+#17630
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D1
+~
+~
++n 0 17633
+D3
+~
+~
++n 0 17629
+D0
+~
+~
++n 0 17619
+D2
+~
+~
++n 0 17631
+S
+#17631
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17630
+D1
+~
+~
++n 0 17636
+D2
+~
+~
++n 0 17609
+D3
+~
+~
++n 0 17632
+S
+#17632
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17629
+D1
+~
+~
++n 0 17631
+D2
+~
+~
++n 0 17606
+D3
+~
+~
++n 0 17627
+S
+#17633
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17624
+D1
+~
+~
++n 0 17634
+D2
+~
+~
++n 0 17636
+D3
+~
+~
++n 0 17630
+S
+#17634
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17623
+D1
+~
+~
++n 0 17616
+D2
+~
+~
++n 0 17635
+D3
+~
+~
++n 0 17633
+S
+#17635
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17634
+D1
+~
+~
++n 0 17625
+D2
+~
+~
++n 0 17601
+D3
+~
+~
++n 0 17636
+S
+#17636
+Fields of War~
+The smell of blood overwhelms your sences as you
+fight to keep your throat closed for fear of adding
+to the smells with the splashing of your lunch on
+your shoes. All around you, body parts slowly twitch
+in a semblance of undead life caused by the recentness
+of their seperation from a body they once called
+home.
+~
+0 +nnnnYnnnnnnnnnnnnnnYnnnnYY 4
+D0
+~
+~
++n 0 17633
+D1
+~
+~
++n 0 17635
+D2
+~
+~
++n 0 17610
+D3
+~
+~
++n 0 17631
+S
+#17697
+Team Waiting Room~
+Gentle muzak filters in from hidden speakers in the walls.  A large
+leather couch is here to help you rest up before the battle.  A nurse is
+walking around tending to you to make sure that when you head into the
+Battlefield to get the shit kicked out of you, you at least have a fighting
+chance.  
+~
+0 +nnYYnnnnnnYnnnnnnnYnnnnnY 0
+S
+#17698
+War Loser's Room~
+~
+0 +nnnYnnnnnnYnnnnnnnYnnnnnY 0
+D1
+~
+~
++n 0 3001
+S
+#17699
+War Winner's Room~
+~
+0 +nnnYnnnnnnYnnnnnnnYnnnnnY 0
+D3
+~
+~
++n 0 3001
+S
+#0
+
+#SPECIALS
+M 17601 spec_warmaster
+S
+
+#RESETS
+O 0 17600 0 17600
+M 0 17600 1 17600 1
+R 0 17601 4 0
+R 0 17605 4 0
+R 0 17610 4 0
+R 0 17615 4 0
+R 0 17616 4 0
+R 0 17621 4 0
+R 0 17626 4 0
+R 0 17630 4 0
+S
+
+#SHOPS
+0
+
+#MOBPROGS
+#0
+
+#OBJPROGS
+#0
+
+#ROOMPROGS
+#0
+
+#$

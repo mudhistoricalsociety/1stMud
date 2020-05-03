@@ -1,0 +1,184 @@
+@SET_MAKE@
+MAKEDEP  = @MAKEDEP_PROG@
+INDENT	 = @INDENT_PROG@
+TOUCH	 = @TOUCH_PROG@
+CTAGS	 = @CTAGS_PROG@
+LINT	 = @LINT_PROG@
+CVS	 = @CVS_PROG@
+INSTALL  = @INSTALL@
+CYGWIN   = @CYGWIN_ENV@
+MINGW	 = @MINGW32_ENV@
+PACKAGE  = @PACKAGE_STRING@
+CC       = @CXX@
+PROF     = @CXXFLAGS@
+WARN     = -Wall -Werror
+LIBS     = @LIBS@
+VPATH    = @srcdir@
+CONFIG	 = @srcdir@/config
+H_DIR	 = @srcdir@/h
+O_DIR    = @srcdir@/o
+BIN	 = ../bin
+DATA	 = ../data
+
+D_FLAGS = @DEFS@ ${DIRFLAGS}
+C_FLAGS = ${WARN} ${PROF} ${D_FLAGS} -I${H_DIR}
+L_FLAGS = ${PROF} ${LIBS}
+
+C_FILES   := ${wildcard *.c}
+O_FILES   := ${patsubst %.c, ${O_DIR}/%.o, ${C_FILES}}
+H_FILES	  := ${wildcard ${H_DIR}/*.h}
+SRCS	  := ${C_FILES} ${H_FILES}
+
+ifdef CYGWIN
+	EXE    = @PACKAGE_NAME@.exe
+	CYGEXE = @PACKAGE_NAME@.new.exe
+else
+	EXE    = @PACKAGE_NAME@
+endif
+
+default:
+	@echo "Options: all, install, ${EXE}, clean, touch, indent, tags, lint, backup, resetconfig, and cvsupdate."
+
+.PHONY: all
+all: checkdepend checkfiles ${EXE}
+
+${EXE}: ${sort ${O_FILES}}
+	@rm -f ${EXE}
+	@${CC} -o ${EXE} ${O_FILES} ${L_FLAGS}
+ifdef CYGWIN
+	@cp -f ${EXE} ${CYGEXE}
+endif
+	@echo "Done ${PACKAGE} build."
+
+.PHONY: install
+install: all
+	@rm -f ${BIN}/${EXE}
+	@${INSTALL} ${EXE} ${BIN}
+ifdef CYGWIN
+	@${INSTALL} ${EXE} ${BIN}/${CYGEXE}
+# Installs the cygwin1.dll to windows directory.
+	@../win/install.bat cygwin
+endif
+	@echo "Done ${PACKAGE} install."
+
+${O_DIR}/%.o: %.c
+	@echo "`date +"%X"` : Compiling $<..."
+	@${CC} -c ${C_FLAGS} -o $@ $<
+
+%.header: %.h
+	@mv -f $< ${H_DIR}
+
+.PHONY: checkdepend
+checkdepend:
+	@if [ -z "`cat .depend`" ]; then ${MAKE} depend; fi
+
+.PHONY: checkfiles
+checkfiles: checkdirs ${patsubst %.h, %.header, ${wildcard *.h}}
+
+.PHONY: checkdirs
+checkdirs: 
+	@if [ ! -d ${H_DIR} ]; then mkdir ${H_DIR}; fi
+	@if [ ! -d ${O_DIR} ]; then mkdir ${O_DIR}; fi
+
+.PHONY: clean
+clean:
+	@rm -f *.o *.orig *.rej *~ ${O_DIR}/*.* ${H_DIR}/*~ ${H_DIR}/*.orig ${H_DIR}/*.rej \
+	${CONFIG}/*~ ${EXE}* tags
+ifdef CYGWIN
+	@rm -f ${CYGEXE}
+endif
+	@echo "Done cleaning ${PACKAGE}."
+
+.PHONY: touch
+touch:
+	@if [ "${TOUCH}" != "error" ]; then \
+		${TOUCH} ${SRCS}; \
+		echo "Done touching ${PACKAGE} files."; \
+	else \
+		echo "No touch command found."; \
+	fi
+
+.PHONY: indent
+indent:
+	@if [ "${INDENT}" != "error" ]; then \
+		${INDENT} ${SRCS}; \
+		echo "Done formating ${PACKAGE} files."; \
+	else \
+		echo "No indent program found."; \
+	fi
+
+# After tag file is created, you can use vi -t {tag}
+# to edit a file at a specific c-type tag.
+.PHONY: tags
+tags:
+	@if [ "${CTAGS}" != "error" ]; then \
+		${CTAGS} ${SRCS}; \
+		echo "${PACKAGE} tag file created."; \
+	else \
+		echo "No tags program found."; \
+	fi
+
+.PHONY: lint
+lint:
+	@if [ "${LINT}" != "error" ]; then \
+		${LINT} ${SRCS}; \
+		echo "${PACKAGE} source files linted."; \
+	else \
+		echo "No lint program found."; \
+	fi
+
+.PHONY: backup
+backup:
+	@${BIN}/backup clean
+	@${BIN}/backup all
+
+.PHONY: resetconfig
+resetconfig: indent clean
+	@rm -f ${CONFIG}/config.cache
+	@rm -f ${CONFIG}/config.log
+	@rm -f ${CONFIG}/config.status
+	@rm -rf ${CONFIG}/autom4te.cache
+	@rm -f ${CONFIG}/stamp-h*
+	@rm -f ${H_DIR}/config.h
+	@rm -f Makefile
+	@cp -f ${CONFIG}/Makefile.orig Makefile
+	@rm -f .depend
+	@rm -f ${BIN}/${EXE}
+ifdef CYGWIN
+	@rm -f ${BIN}/${CYGEXE}
+endif
+	@rm -f ${BIN}/${EXE}.pid
+	@rm -f ${DATA}/shutdown.txt
+	@rm -f ${DATA}/plr_index.dat
+	@rm -f ${DATA}/i3/*.hist ${DATA}/i3/i3.mudlist ${DATA}/i3/i3.chanlist
+	@rm -f ../log/*.log
+	@echo "${PACKAGE} configuration reset."
+
+.PHONY: cvsupdate
+cvsupdate:
+	@if [ "${CVS}" != "error" ]; then \
+	if [ -d CVS ]; then \
+		${CVS} update; \
+	else \
+		@echo "No Cvs info found! Try using cvs checkout first."; \
+	fi \
+	fi
+
+.PHONY: depend
+depend: 
+	@if [ "${MAKEDEP}" = "makedepend" ]; then \
+		${MAKEDEP} -DDEPEND -p${O_DIR}/ -f- -- ${C_FLAGS} -- ${SRCS} > .depend; \
+	else if [ "${MAKEDEP}" = "mkdep" ]; then \
+		${MAKEDEP} -p ${C_FLAGS} ${SRCS}; \
+	else \
+		${CC} -E -MM -DDEPEND ${SRCS} -Ih | sed 's/\(.*\)\.o:/${O_DIR}\/\1.o:/g' > .depend; \
+	fi \
+	fi
+	@echo "${PACKAGE} dependencies made."
+
+.PHONY: prepare
+prepare: checkfiles touch depend tags
+
+@CONFIG_DEPEND@
+
+include .depend

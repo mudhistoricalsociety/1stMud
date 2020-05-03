@@ -1,0 +1,88 @@
+#AREADATA
+Name			Player Estates~
+Builders		None~
+VNUMs			17700 17899
+Credits			1stMud~
+LvlComment		All~
+Version			4
+Security		9
+Climate			2 2 2
+Flags			+nnnY
+Stats			0 0END
+
+
+#MOBILES
+#0
+
+#OBJECTS
+#17700
+key Tester home~
+Tester's key~
+The key to Tester's home is here.~
+unknown~
+key +n +YnnnnnnnnnnnnnY
++n +n +n +n +n
+0 0 0 R
+#0
+
+#ROOMS
+#17700
+Entrance to the Player Estates~
+~
+0 +n 0
+D1
+~
+~
++n 0 17701
+D3
+~
+~
++n 0 3109
+S
+#17701
+A hallyway~
+~
+0 +nY 0
+D0
+You see the door to Tester's home.~
+door~
++YYYnnYY 17700 17702
+D3
+~
+~
++n 0 17700
+S
+#17702
+Tester's Home~
+This is your desc. You can edit this with HOME DESCRIBE.
+~
+0 +nnnYnnnnnnnnnnnnnnnnY 0
+D2
+You see the door to Tester's home.~
+door~
++YYnnnYY 17700 17701
+O Tester~
+S
+#0
+
+#SPECIALS
+S
+
+#RESETS
+F 0 17701 0 0 +YYYnnYY
+F 0 17702 2 0 +YYnnnYY
+S
+
+#SHOPS
+0
+
+#MOBPROGS
+#0
+
+#OBJPROGS
+#0
+
+#ROOMPROGS
+#0
+
+#$

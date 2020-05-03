@@ -1,0 +1,196 @@
+# Process this file with autoconf to produce a configure script.
+AC_PREREQ(2.53)
+AC_INIT(1stMud, 4.5.2, bugs@firstmud.com, firstmud-4.5.2.tar.gz)
+AC_COPYRIGHT([2004 Markanth markanth@firstmud.com])
+
+# Process this file with autoheader to produce a config.h file.
+AC_CONFIG_HEADERS([../h/config.h:config.h.in ])
+AC_CONFIG_SRCDIR(../comm.c)
+
+# Check for compiler.
+AC_PROG_CXX
+AC_PROG_INSTALL
+AC_PROG_MAKE_SET
+# AC_GNU_SOURCE
+AC_DEFINE(_GNU_SOURCE, 1, [Enable GNU extensions.])
+AC_AIX
+AC_CANONICAL_HOST
+
+AC_SUBST(CYGWIN_ENV)
+AC_SUBST(MINGW32_ENV)
+
+case "$host_os" in
+	*-*-cygwin* | *cygwin* ) CYGWIN_ENV=$host_os ;;
+	*-*-mingw32* | *mingw32* ) MINGW32_ENV=$host_os ;;
+	* ) ;;
+esac
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_C_INLINE
+AC_C_PROTOTYPES
+AC_C_VOLATILE
+AC_C_STRINGIZE
+AC_TYPE_PID_T
+AC_TYPE_SIZE_T
+AC_TYPE_UID_T
+AC_TYPE_SIGNAL
+AC_HEADER_TIME
+AC_STRUCT_TM
+AC_STRUCT_TIMEZONE
+
+# Check sizes.
+AC_CHECK_SIZEOF(char, 0)
+AC_CHECK_SIZEOF(short, 0)
+AC_CHECK_SIZEOF(int, 0)
+AC_CHECK_SIZEOF(long, 0)
+AC_CHECK_SIZEOF(long long, 0)
+
+# Checks for libraries.
+AC_CHECK_LIB(crypt, crypt)
+AC_CHECK_LIB(z, deflate)
+AC_CHECK_LIB(socket, socket)
+AC_CHECK_LIB(nsl, gethostbyname)
+AC_CHECK_LIB(resolv, inet_aton)
+AC_CHECK_LIB(mysqlclient, mysql_init)
+
+# Checks for header files.
+AC_HEADER_DIRENT
+AC_HEADER_STDC
+AC_HEADER_STAT
+AC_HEADER_SYS_WAIT
+AC_CHECK_HEADERS([arpa/inet.h fcntl.h limits.h stdbool.h netdb.h netinet/in.h sys/socket.h crypt.h zlib.h sys/utsname.h sys/param.h sys/resource.h mysql.h])
+
+AC_CHECK_TYPES([socklen_t, int64_t, bool, _Bool])
+
+if test -n "$ac_cv_have_socklen_t"; then
+	AC_MSG_CHECKING([compile of socklen_t variable])
+	AC_COMPILE_IFELSE(AC_LANG_PROGRAM([#include <stdlib.h>
+		#include <netinet/in.h>
+		#include <sys/socket.h>],
+		[socklen_t sz = 100;
+		exit(0);]),
+		[AC_DEFINE(HAVE_SOCKLEN_T, 1, [Define if socklen_t was found.])
+		AC_MSG_RESULT(yes)],
+		[AC_DEFINE(socklen_t, unsigned int, [Define if socklen_t was NOT found.])
+fi
+
+format_time_t=\"%ld\"
+AC_MSG_CHECKING([long time_t variable])
+AC_COMPILE_IFELSE(AC_LANG_PROGRAM([#include <sys/types.h>
+	#include <stdio.h>],
+	[time_t tm = 60 * 60;
+	fprintf(stdout, "%ld", tm);
+	exit(0);]),
+	[AC_DEFINE(HAVE_LONG_TIME_T, 1, [Define if time_t uses a long int.])
+	AC_MSG_RESULT(yes)],
+	[format_time_t=\"%d\"
+	AC_MSG_RESULT(no)])
+
+AC_DEFINE_UNQUOTED(TIME_T_FMT, $format_time_t, [Define to %ld if time_t uses a long int.])
+
+AC_CHECK_MEMBERS([struct tm.tm_gmtoff])
+ 
+AC_MSG_CHECKING([timezone variable])
+AC_COMPILE_IFELSE(AC_LANG_PROGRAM([#include <time.h>],
+	[timezone += 1;
+	exit (0);]),
+	[AC_DEFINE(HAVE_TIMEZONE_VAR, 1, [Define if system has extern timezone variable.])
+	AC_MSG_RESULT(yes)],
+	AC_MSG_RESULT(no))
+
+# Checks for functions.
+AC_FUNC_FORK
+AC_FUNC_MEMCMP
+AC_FUNC_MALLOC
+AC_FUNC_MEMCMP
+AC_FUNC_MKTIME
+AC_FUNC_STAT
+AC_FUNC_STRFTIME
+AC_FUNC_STRNLEN
+AC_FUNC_VPRINTF
+AC_FUNC_ALLOCA
+AC_FUNC_FNMATCH
+AC_CHECK_FUNCS([atexit getcwd popen crypt gettimeofday inet_aton isascii memmove memset mkdir strerror strtoul execl random srandom rand srand psignal strsignal setrlimit setitimer getuid getpid getpwuid scandir])
+
+# Enable some arguments.
+AC_ARG_ENABLE(noweb, AC_HELP_STRING(noweb, [disables web server.]), AC_DEFINE(DISABLE_WEBSRV, 1, [Define to disable web server]))
+AC_ARG_ENABLE(nomccp, AC_HELP_STRING(nomccp, [disables mud client compression protocol.]), nomccp=true)
+AC_ARG_ENABLE(noi3, AC_HELP_STRING(noi3, [disables intermud 3 network.]), AC_DEFINE(DISABLE_I3, 1, [Define to disable intermud 3]))
+AC_ARG_ENABLE(nocrypt, AC_HELP_STRING(nocrypt, [disables password encryption.]), nocrypt=true)
+AC_ARG_ENABLE(oldrand, AC_HELP_STRING(oldrand, [uses the old random number system.]), oldrand=true)
+AC_ARG_ENABLE(nosendstat, AC_HELP_STRING(nosendstat, [disables sending stats back to firstmud.com.]), AC_DEFINE(DISABLE_SENDSTAT, 1, [Define to disable sending stats back to firstmud.com]))
+AC_ARG_ENABLE(noalphapfiles, AC_HELP_STRING(noalphapfiles, [disables prefixing player files with an initial directory.]), AC_DEFINE(NO_INITIAL_ALPHA_PFILEDIRS, 1, [Define to disable prefixing player files with initial directory.]))
+AC_ARG_ENABLE(nomysql, AC_HELP_STRING(nomysql, [disables using MySQL to store data tables.]), nomysql=true)
+
+# Check for programs.
+AC_CHECK_PROGS(MAKEDEP_PROG,[makedepend mkdep],error)
+AC_CHECK_PROGS(INDENT_PROG,[indent astyle],error)
+AC_CHECK_PROGS(CTAGS_PROG,[ctags etags],error)
+AC_CHECK_PROG(TOUCH_PROG,[touch],touch,error)
+AC_CHECK_PROG(LINT_PROG,[lint],lint,error)
+AC_CHECK_PROG(GDB_PROG,[gdb],gdb,error)
+AC_CHECK_PROG(MAIL_PROG,[sendmail],sendmail,error)
+AC_CHECK_PROG(CVS_PROG,[cvs],cvs,error)
+
+# Check for no encryption.
+if test "$nocrypt" = "true" -o -n "$ac_cv_have_crypt"; then
+	AC_DEFINE(DISABLE_CRYPT, 1, [Turns off encrypted passwords.])
+fi
+
+# Check for no MCCP.
+if test "$nomccp" = "true" -o -n "$ac_cv_have_libz"; then
+	AC_DEFINE(DISABLE_MCCP, 1, [Define to disable MCCP.])
+fi
+
+# Check for no MYSQL.
+if test -n "$ac_cv_have_lib_mysqlclient" -o "$nomysql" = "true"; then
+	AC_DEFINE(DISABLE_MYSQL, 1, [Define to disable MYSQL support.])
+fi
+
+# Check for random functions.
+if test -n "$ac_cv_have_random"; then
+	if test -n "$ac_cv_have_rand"; then
+		norandom=true
+	else
+		AC_DEFINE(random, rand, [Define as rand if not found and rand exists.])
+	fi
+fi
+
+# Check for srandom functions.
+if test -n "$ac_cv_have_srandom"; then
+	if test -n "$ac_cv_have_srand"; then
+		nosrandom=true
+	else
+		AC_DEFINE(srandom, srand, [Define as srand if not found and srand exists.])
+	fi
+fi
+
+# Check if old random system should be used.
+if test "$oldrand" = "true" -o "$norandom" = "true" -o "$nosrandom" = "true"; then
+	AC_DEFINE(OLD_RAND, 1, [Use the old random number system.])
+fi
+
+# Make program defines.
+if test "$GDB_PROG" != "error"; then
+	AC_DEFINE(HAVE_GDB, 1, [Have the gdb program.])
+	AC_CONFIG_FILES(../bin/.gdbinit:gdbinit.in)
+fi
+
+if test "MAIL_PROG" != "error"; then
+	AC_DEFINE(HAVE_SENDMAIL, 1, [Have the sendmail program.])
+fi
+
+# Check for indent.
+if test "$INDENT_PROG" = "indent"; then 
+	AC_CONFIG_FILES([../.indent.pro:indent.pro.in])
+fi
+
+CONFIG_DEPEND=config.depend
+AC_SUBST_FILE(CONFIG_DEPEND)
+
+# Output.
+AC_CONFIG_COMMANDS([stamp-h], [date >stamp-h])
+AC_CONFIG_FILES([../Makefile:Makefile.in], [echo > ../.depend])
+AC_OUTPUT
+

@@ -1,0 +1,581 @@
+
+#RACE
+name			Human~
+description		~
+pc_race			true
+act			+n
+aff			+n
+off			+n
+imm			+n
+res			+n
+vuln			+n
+form			+YnnnnnnYnnnnYnnnnnnnnY
+parts			+YYYYYYYYYYY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Elf~
+description		~
+pc_race			true
+act			+n
+aff			+nnnnnnnnnY
+off			+n
+imm			+n
+res			+nY
+vuln			+nnnnnnnnnnnnnnnnnnnnnnnnnY
+form			+YnnnnnnYnnnnYnnnnnnnnY
+parts			+YYYYYYYYYYY
+points			5
+class_mult		100 125 100 120 125 120 @
+skills			sneak~ hide~ @~
+stats			12 14 13 15 11 @
+max_stats		16 20 18 21 15 @
+size			small~
+#END
+
+#RACE
+name			Dwarf~
+description		~
+pc_race			true
+act			+n
+aff			+nnnnnnnnnY
+off			+n
+imm			+n
+res			+nnnnnnnnnnnYnnnnY
+vuln			+nnnnnnnnnnnnnnnnnY
+form			+YnnnnnnYnnnnYnnnnnnnnY
+parts			+YYYYYYYYYYY
+points			8
+class_mult		150 100 125 100 100 100 @
+skills			berserk~ @~
+stats			14 12 14 10 15 @
+max_stats		20 16 19 14 21 @
+size			medium~
+#END
+
+#RACE
+name			Giant~
+description		~
+pc_race			true
+act			+n
+aff			+n
+off			+n
+imm			+n
+res			+nnnnnnnYY
+vuln			+nnnnnnnnnYnnnnnY
+form			+YnnnnnnYnnnnYnnnnnnnnY
+parts			+YYYYYYYYYYY
+points			6
+class_mult		200 150 150 105 150 105 @
+skills			bash~ fast healing~ @~
+stats			16 11 13 11 14 @
+max_stats		22 15 18 15 20 @
+size			large~
+#END
+
+#RACE
+name			Dragon~
+description		~
+pc_race			true
+act			+n
+aff			+nnnnnnnnnYnnnnnnnnnY
+off			+n
+imm			+n
+res			+nYnnYnnY
+vuln			+nnnnnYnnY
+form			+YnnnnnnYnnnnnnnnnnnnnnnnnY
+parts			+YnYYYYYYYYYnnnnYYnnnYYYY
+points			10
+class_mult		200 200 200 200 200 200 @
+skills			@~
+stats			16 13 13 10 15 @
+max_stats		22 22 22 19 22 @
+size			huge~
+#END
+
+#RACE
+name			Orc~
+description		~
+pc_race			true
+act			+n
+aff			+nnnnnnnnnY
+off			+n
+imm			+n
+res			+nnnnnnnnnnnnnnnnY
+vuln			+nnnnnnnnnnnnnnnnnnY
+form			+YYnnnnnYnnnnYnnnnnnnnYnnnnnnY
+parts			+YYYYYYYYYYYnnnnnnnnnYnYnY
+points			7
+class_mult		200 200 100 100 180 130 @
+skills			kick~ @~
+stats			16 10 11 15 14 @
+max_stats		22 18 19 22 20 @
+size			medium~
+#END
+
+#RACE
+name			Bat~
+description		~
+pc_race			false
+act			+n
+aff			+nnnnnnnnnnnnnnnnnnnYnnnnnY
+off			+nnnnnYnY
+imm			+n
+res			+n
+vuln			+nnnnnnnnnnnnnnnnnnY
+form			+YnnnnnYnnnnnnnnnnnnnnY
+parts			+YnYYYYnnnYYnnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Bear~
+description		~
+pc_race			false
+act			+n
+aff			+n
+off			+nnnYYnnnnnnnnnY
+imm			+n
+res			+nnnnYnnnY
+vuln			+n
+form			+nnnnnnYnnnnnYnnnnnnnnY
+parts			+YYYYYYnYnYYnnnnnnnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Cat~
+description		~
+pc_race			false
+act			+n
+aff			+nnnnnnnnnnnnnnnnnnnnnnnnnY
+off			+nnnnnYnY
+imm			+n
+res			+n
+vuln			+n
+form			+nnnnnnYnnnnnYnnnnnnnnY
+parts			+YYYYYYnYnYYnnnnnnnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Centipede~
+description		~
+pc_race			false
+act			+n
+aff			+nnnnnnnnnnnnnnnnnnnnnnnnnY
+off			+n
+imm			+n
+res			+nnnnnYnnY
+vuln			+nnnnY
+form			+YYnnnnYnnnnnnnY
+parts			+YnYnnnnnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Dog~
+description		~
+pc_race			false
+act			+n
+aff			+n
+off			+nnnnnnnY
+imm			+n
+res			+n
+vuln			+n
+form			+nnnnnnYnnnnnYnnnnnnnnY
+parts			+YYYYYYnYnYYnnnnnnnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Doll~
+description		~
+pc_race			false
+act			+n
+aff			+n
+off			+n
+imm			+nnnnnnnnYnnYYYnYYY
+res			+nnnnYnnnnnnnnnnnnnY
+vuln			+nnnnnnYYnYYnnnY
+form			+nnnnYnnnnYnnYnnnnnnnnnnnnnnnY
+parts			+YYYnnnYYnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Fido~
+description		~
+pc_race			false
+act			+n
+aff			+n
+off			+nnnnnYnnnnnnnnnnnY
+imm			+n
+res			+n
+vuln			+nnY
+form			+nnnnnnYnnnnnYnnnnnnnnY
+parts			+YYYYYYnYnYYnnnnnnnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Fox~
+description		~
+pc_race			false
+act			+n
+aff			+nnnnnnnnnnnnnnnnnnnnnnnnnY
+off			+nnnnnYnY
+imm			+n
+res			+n
+vuln			+n
+form			+nnnnnnYnnnnnYnnnnnnnnY
+parts			+YYYYYYnYnYYnnnnnnnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Goblin~
+description		~
+pc_race			false
+act			+n
+aff			+nnnnnnnnnY
+off			+n
+imm			+n
+res			+nnnnnnnnnnnnnnnnY
+vuln			+nnY
+form			+YYnnnnnYnnnnYnnnnnnnnYnnnnnnY
+parts			+YYYYYYYYYYYnnnnnnnnnYnYnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Hobgoblin~
+description		~
+pc_race			false
+act			+n
+aff			+nnnnnnnnnY
+off			+n
+imm			+n
+res			+nnnnnnnnnnnYnnnnY
+vuln			+n
+form			+YYnnnnnYnnnnYnnnnnnnnYnnnnnnY
+parts			+YYYYYYYYYYYnnnnnnnnnYnYnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Kobold~
+description		~
+pc_race			false
+act			+n
+aff			+nnnnnnnnnY
+off			+n
+imm			+n
+res			+nnnnnnnnnnnY
+vuln			+nnY
+form			+YYnnnnnYnnnnYnnnnnnnnYnnnnnnY
+parts			+YYYYYYYYYYYnnnnnnnnnYnYnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Lizard~
+description		~
+pc_race			false
+act			+n
+aff			+n
+off			+n
+imm			+n
+res			+nnnnnnnnnnnY
+vuln			+nnnnnnnnY
+form			+YnnnnnYnnnnnnnnnnnnnnnnYnnnnY
+parts			+YYYYYYYYYYYYnnnnYnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Modron~
+description		~
+pc_race			false
+act			+n
+aff			+nnnnnnnnnY
+off			+nnnnnnnnnnnnnnnnYY
+imm			+nYnnnnnnnnnnYYnYY
+res			+nnnnnnnYYnY
+vuln			+n
+form			+nnnnnnnY
+parts			+YYYnnnYYnYY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Pig~
+description		~
+pc_race			false
+act			+n
+aff			+n
+off			+n
+imm			+n
+res			+n
+vuln			+n
+form			+nnnnnnYnnnnnYnnnnnnnnY
+parts			+YnYYYYnYnYYnnnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Rabbit~
+description		~
+pc_race			false
+act			+n
+aff			+n
+off			+nnnnnYnY
+imm			+n
+res			+n
+vuln			+n
+form			+nnnnnnYnnnnnYnnnnnnnnY
+parts			+YnYYYYnYnYY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			School monster~
+description		~
+pc_race			false
+act			+nnnnnnnnnnnnnnnnnnnnY
+aff			+n
+off			+n
+imm			+YY
+res			+n
+vuln			+nnY
+form			+nnnnnnYnnnnnYnnnnnnnnY
+parts			+YnYYYYnYnYYnnnnnYnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Snake~
+description		~
+pc_race			false
+act			+n
+aff			+n
+off			+n
+imm			+n
+res			+nnnnnnnnnnnY
+vuln			+nnnnnnnnY
+form			+YnnnnnYnnnnnnnnnnnnnnnnYnnnnY
+parts			+YYYYYYYYYYYYnnnnYnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Song bird~
+description		~
+pc_race			false
+act			+n
+aff			+nnnnnnnnnnnnnnnnnnnY
+off			+nnnnnYnY
+imm			+n
+res			+n
+vuln			+n
+form			+YnnnnnYnnnnnnnnnnnnnnnY
+parts			+YnYYYYnYnnYnnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Troll~
+description		~
+pc_race			false
+act			+n
+aff			+nnnnnYnnnYnnnnnnnnnnnnnnnnnnY
+off			+nnnY
+imm			+n
+res			+nYnnY
+vuln			+nnnnnnnYnnY
+form			+YYnnnnnYnnnnYnnnnnnnnYnnnnnnY
+parts			+YYYYYYYYYYYnnnnnnnnnYnYnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Water fowl~
+description		~
+pc_race			false
+act			+n
+aff			+nnnnnnnnnnnnnnnnnnnYnnnnnnnY
+off			+n
+imm			+n
+res			+nnnnnnnnnnnnnnnnnY
+vuln			+n
+form			+YnnnnnYnnnnnnnnnnnnnnnY
+parts			+YnYYYYnYnnYnnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Wolf~
+description		~
+pc_race			false
+act			+n
+aff			+nnnnnnnnnnnnnnnnnnnnnnnnnY
+off			+nnnnnYnY
+imm			+n
+res			+n
+vuln			+n
+form			+nnnnnnYnnnnnYnnnnnnnnY
+parts			+YYYYYYnYnYYnnnnnnnnnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Wyvern~
+description		~
+pc_race			false
+act			+n
+aff			+nnnYnYnnnnnnnnnnnnnY
+off			+nnYnnYnY
+imm			+nnnnnnnnnnnY
+res			+n
+vuln			+nnnnnnnnnnnnnnnnnnY
+form			+YYnnnnYnnnnnnnnnnnnnnnnnnY
+parts			+YYYYYYYYnYYnnnnnYnnnnYnY
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+
+#RACE
+name			Unique~
+description		~
+pc_race			false
+act			+n
+aff			+n
+off			+n
+imm			+n
+res			+n
+vuln			+n
+form			+n
+parts			+n
+points			0
+class_mult		100 100 100 100 100 100 @
+skills			@~
+stats			13 13 13 13 13 @
+max_stats		18 18 18 18 18 @
+size			medium~
+#END
+#!

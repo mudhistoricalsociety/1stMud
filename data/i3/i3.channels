@@ -1,0 +1,64 @@
+#I3CHAN
+local_name              dchat~
+host_mud                Alsherok~
+I3_name                 diku_chat~
+layout_m                {R[{W%s{R] {C%s@%s: {c%s~
+layout_e                {R[{W%s{R] {c%s~
+status                  0
+i3perm                  2
+history                 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ @~
+flags                   +n
+#END
+
+#I3CHAN
+local_name              dimm~
+host_mud                Alsherok~
+I3_name                 diku_immortals~
+layout_m                {R[{W%s{R] {C%s@%s: {c%s~
+layout_e                {R[{W%s{R] {c%s~
+status                  0
+i3perm                  3
+history                 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ @~
+flags                   +n
+#END
+
+#I3CHAN
+local_name              dcode~
+host_mud                Alsherok~
+I3_name                 diku_code~
+layout_m                {R[{W%s{R] {C%s@%s: {c%s~
+layout_e                {R[{W%s{R] {c%s~
+status                  0
+i3perm                  3
+history                 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ @~
+flags                   +n
+#END
+
+#I3CHAN
+local_name              game~
+host_mud                Thirteen Chronicles~
+I3_name                 word_games~
+layout_m                {R[{W%s{R] {C%s@%s: {c%s~
+layout_e                {R[{W%s{R] {c%s~
+status                  0
+layout_e                {R[{W%s{R] {c%s~
+status                  0
+i3perm                  2
+history                 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ @~
+flags                   +n
+#END
+
+#I3CHAN
+local_name              bchat~
+host_mud                Alsherok~
+I3_name                 bridge_chat~
+layout_m                {R[{W%s{R] {C%s@%s: {c%s~
+layout_e                {R[{W%s{R] {c%s~
+status                  0
+i3perm                  3
+history                 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ @~
+flags                   +n
+#END
+
+#!
+

@@ -1,0 +1,76 @@
+#AREADATA
+Name			Duel Arena~
+Builders		None~
+VNUMs			17590 17599
+Credits			1stMud~
+LvlComment		All~
+Version			4
+Security		9
+Climate			2 2 2
+Stats			0 0END
+
+
+#MOBILES
+#0
+
+#OBJECTS
+#0
+
+#ROOMS
+#17596
+In The Arena~
+~
+0 +nnYnY 0
+D0
+~
+~
++n 0 17597
+S
+#17597
+In the Arena~
+~
+0 +nnYnY 0
+D2
+~
+~
++n 0 17596
+S
+#17598
+Congratulations!~
+~
+0 +n 0
+D4
+~
+~
++n 0 3001
+S
+#17599
+Too bad!~
+~
+0 +n 0
+D4
+~
+~
++n 0 3001
+S
+#0
+
+#SPECIALS
+S
+
+#RESETS
+S
+
+#SHOPS
+0
+
+#MOBPROGS
+#0
+
+#OBJPROGS
+#0
+
+#ROOMPROGS
+#0
+
+#$

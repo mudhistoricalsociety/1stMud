@@ -1,0 +1,868 @@
+1stMud maintained by
+--------------------
+Markanth: markanth@firstmud.com
+Most current version always available from: http://firstmud.com/
+1stMud mailing list can be accessed from the web site, the address to post 
+messages is list@firstmud.com
+
+1stMud version 4.5.2
+--------------------
+1) Removed all comments from src files with ../bin/stripcomments.  Then added
+   all default header template back with ../src/config/template.sh (and template.h)
+2) Added ethos types to deities and clans. (lawful-good to chaotic-evil ect.)
+3) New startup script taken from AnatoliaMUD.
+4) New commands: backup, system, heel, whisper, sooc, helpcheck, think, ditch,
+                 censor, clear, nosayverbs, mobdeaths, mobkills, areadeaths,
+		 areakills, version, sshow, appraise, rename
+5) Deities redone.
+6) New help files added.
+7) Wizlist data added and dynamicaly displayed.
+8) New skills: forceshield, staticshield, flameshield, channel, investiture,
+               powerstorm, mana burn, bark skin, spell mantle, animal instinct,
+	       chaos flare, wild magic
+9) 1stmud.dlmud.com replace with new domain firstmud.com.
+10) cleanup_char() added and do_delete() redone.
+11) do_say and public_ch now use different verbs based on the ending of your
+    message (ex. "say hello :)" displays "You smile 'hello :)'") Toggleable
+    with do_nosayverbs
+12) do_index() redone to list help files by category.
+13) movement messages are changed based on stats now. (ex. 'Someone flies east.'
+    if they are affected by flying)
+14) swear checking added to channels.  PG/R toggleable from censor command.
+15) MXP tags sometimes convert when they shouldn't, still need to be fixed.
+16) cmdline options redone and added to mud_info. See ./1stMud --help
+17) Some changes done to setup.sh, configure.in and Makefile.in. config.depend added.
+18) redit_snake() added which will take an argument like 'snake 2nws' and create
+    rooms for it.
+19) hedit_addkeywd added to append a keyword to a help file.
+20) pfile_t type added.  pfilename(), pfile_filename() and save_char_obj_to_filename()
+    functions added to format a player file.  NO_INITIAL_ALPHA_PFILEDIRS define used to 
+    enable inital letter directory sorting. PLAYER_BACKUP and DELETE_DIR added.
+21) InterMUD3 upgraded from v2.34 to v2.40.
+22) GetDiff, DiffBit, and RepBit bitvector macro's added but unused. IsDrunk, IsAway,
+    ObjFlag, PlrFlag, DescrFlag, MobFlag, CommFlag, RoomFlag, ExitFlag, AreaFlag, 
+    ClanFlag, RaceFlag, SkillFlag, GroupFlag, MudFlag, VideoFlag, TouchArea, QuestObj, 
+    VnumID, read_vnum, atom, read_money, and win32 popen/pclose macros added.
+23) webserver redone again, new style, link prefix defines added, deity page added,
+    more info added to main index page, name generator page added, song lyrics page
+    added, and I3 mudlist page added.
+
+1stMud version 4.5.1
+--------------------
+1) Updated help files: ANSI, CLASSES, DRAGON, ORC, PALADIN, RANGER, 1STMUD, DATE.
+   Added more missing help files (STANCE, I3, ARENA, REMORT, GREETING2).
+2) ProtoNoR macro added to define functions that don't return using __attribute__
+3) set_cols,cols_header,cols_nl,print_cols,cols_print functions updated.
+4) print_all_on_off function added, print_on_off changed to used Column Data.
+5) help_text() macro added to handle initial '.', do_index() added to simplify
+   'help <letter>'.
+6) Configuration:
+	a) TIME_T_FMT and SIZE_T_FMT added to configuration to determine how to printf
+	   those variables.
+	b) enable DISABLE_SENDSTAT option added.
+	c) PACKAGE_* variables used for default mud name/version
+7) Color code changed drastically: 
+	a) new functions: ansi_skip()
+	b) vt100 flags added. Controls how codes are sent.  See colourset.
+	c) Codes: 
+		A) {#[+X] -> # is an attribute (help ANSI), +X is an optional color
+		   color code where 'X' is the code.
+		B) {T[+"X"] -> print the time/date, +"X" is an optional format string
+		   where 'X' is the actual format codes (help DATE).
+		C) {=X -> prints a background color code 'X'.
+		D) {n -> prints the muds name ({N for uppercase).
+8) init_socket() changed to return INVALID_SOCKET.
+9) potion/affect/webpwd levels added to automatic changing of game levels.
+10) Some olc copy commands added, bug in hedit_create fixed, validate_keyword added to help 
+    editor, data_table's now save after being changed by olc editor.
+11) Banks changed so you can't withdraw/deposit/transfer over the size of the destination
+    variable.
+12) Bug in stungetc() fixed, support for systems without an atexit() function added.
+13) Parts of the code were not compiling in normal C... fixed.
+14) Webserver updated:
+	a) baseurl, path, stuff, buf variables added to WebDescriptor.
+	b) substr() function added in string.c
+	c) http_status(), send_content(), determine_type(), determine_status(),
+	   htmlcolor_lookup(), format_req(), crs_lookup(), and color_slot_lookup() 
+	   functions added.
+	d) html_colorconv() changed to return a buffer.
+	e) <font> tags changed to <span style=""> tags to conform with new HTML standards.
+	f) print_header() redone and optional meta refresh added.
+	g) HandleCreditsRequest() added.
+	h) immortal help files and copyover/reboot/shutdown added to admin section.
+	i) HandlePlayersRequest() added for mortal logins.
+15) Saving of time_data frequency lessened.
+17) added cvsserve.cpp and dos2unix.c to ../bin/extras, startup script updated.
+18) tell counter added to replay code.
+19) random quit messages added.
+20) quest code overhaul:
+	a) more quest types added: findmob, findroom, and deliver.
+	b) data types changed.
+21) added dlm_score() (+helper functions). moved do_score to old_score.  Typing 'score old'
+    will show the old screen.
+22) client command added to centralize the client enhancement commands.
+23) log file cycling spruced up a bit.
+24) Replaced 'unused' sector type with 'ice'.
+25) updated year in header files comments. (3 years of 1stMud already?)
+26) Disabled alarm/virtual alarm under Cygwin.
+
+1stMud version 4.5.0
+--------------------
+1) Added name generator to creation. You can also use the 'genname' command inside
+   the game. namegen.c added.
+2) Help categories added.
+3) Intermud 3 support added directly to 1stMud. New files i3.c and i3.h, support
+   files added in new directory ../i3/.
+4) Astyle support added for those who don't like indent. (c/c++ code styler)
+5) Sex type added to 'who' display. New custom colour for whosex added.
+6) Fixed up colourset command.
+7) Added act_new like function for MSP sounds - act_sound().  to_flags table added
+   (TO_CHAR, TO_VICT, ect) and to bits used in MspData.
+8) init_network()/close_network() functions added.
+9) win32 copyover stuff redone a tiny bit.
+10) autoconf.html added in case you want to download the latest GNU autoconf.
+11) Sounds added to room data and skill data.  Sounds will be available for download
+    on Sourceforge or firstmud.com/MSP
+12) rpl_malloc, rpl_realloc replacement functions added (for those systems that need it)
+13) fnmatch.c file added for systems that don't have the fnmatch() function.
+14) spell functions changed to return a boolean.
+15) exists_player, getarg, hasname, flagname, and unflagname functions added.
+16) sigalrm and exp_per_level functions updated.
+17) Added strlcpy and strlcat functions.
+
+1stMud version 4.4
+------------------
+1) Added morgue rooms for clans and newbies below level 20. (Haddock)
+   Clan flags for future use.
+2) Added global bonus system, (exp, questpoints, damage). see do_bonus().
+3) Re-added grouping level restrictions. Now based on the highest level of group
+   not just the leader. 20 levels customizable in mudedit.
+4) Fixed a bug with exits not showing in redit and linking exits in redit.
+5) Fixed a bug setting stances on characters. Added stance_table[] and redid
+   do_sskill(), do_stance(), do_autostance().
+6) Added screen size setting to creation if client doesn't support NAWS.
+7) Changed system logging with syslog_t enum. "-v (verbose logging)" changed to
+   "-l <logtype> (stderr, file, off)". Syslog info also saves over boots.
+8) Enabled copyover for Windows, both msvc++ and cygwin. Fixed a bug with
+   setitimer() on cygwin. Enabled crypt (password encryption) on cygwin.
+9) Makefile/configure now autogenerates the .depend file if it is empty.
+   Added setup.sh to setup the configure script.  Also added Makefile.guess
+   for those without autoconf and Makefile.bsd for *bsd users.  The setup.sh
+   scripts will (hopefully) automatically copy Makefile.guess to ../Makefile if
+   it fails.
+10) Did some changes on windows sockets, some macro defines changed/added.
+11) Added 'sendstats' command to send mud statistics to stats.firstmud.com
+    immediately.
+12) More default auto's added to new characters in pload_default().
+13) More BSD/Solaris system support added, thanks to Haddock for the server use.
+14) Fixed new characters always being drunk.  Updated pfiles.count after
+    the first character is made an IMP (so characters thereafter aren't IMP's)
+15) mobdam/pcdam modifiers added to mud data.
+16) Miscellaneous bugs fixed in data_table.c.
+17) mcclient-0.5 added to project.  A simple MCCP proxy for mud clients who
+    do not support it.  I modified it slighty adding TSPEED detection, better
+    output, ect, hence, v0.5 instead of v0.4 found at 
+    http://www.randomly.org/projects/MCCP. Compiles under *nix, MSVC++, Cygwin,
+    and hopefully the newest Mingw32 (not tested).
+18) All MSVC++ projects moved to ../msvc directory, windows zlib files in ../lib
+    updated to the new version using zlib1.dll.
+19) Saving/loading helps now done with datatables. (would be interesting to
+    build hierarchies of data files for areas... yah right)
+20) Added compressed file handling using the zlib lib. File I/O can be changed 
+    using the following defines and should be used ONLY on files:
+    GZFILEIO =	Use compression file handlers, transparently handling
+		non-compressed files. UNTESTED! Will be undefined if DISABLE_MCCP
+		is defined.
+    STFILEIO =  Custom file handlers which when reading, dumps file to a
+		string for parsing, and when writing, saves to a temporary
+		file before renaming.
+    If none of those defines are used the standard file I/O is used, see
+    fileio.h.
+21) Linkdead flag added to characters.
+22) Doorbell exit flag added. Player homes now get a doorbell, doorbells can be used
+    with the ring command and anyone within 5 rooms on the other side will hear it.
+23) Remorts can now control thier prime class for 5 TP with the 'prime' command.
+24) sockets command redone, invisible command 'users' added as an alias for sockets
+25) Games board added for imm/gquest/war stuff.
+26) is_true_clan() added to compliment is_clan() but without independent flagged clans.
+27) if new logins aren't playing the game in 15 minutes, they are automatically disco'd
+28) MspData, olced_sound added, write/read_sound(), added. MspData added to AreaData
+    if area has a sound it plays when you enter the area.
+
+1stMud version 4.3
+------------------
+1) Added a prompt table for more default prompts in the prompt command.
+2) Added currency_t typedef, updated deduct_cost(), check_worth(), and
+   added add_cost().
+3) Updated bank command.
+4) GetRemort() macro updated.
+5) healer table added to keep track of the healer spells/costs.
+   spell_lookup() added to find the gsn of a spell function.
+6) Minimum save level added to mud data.
+7) First player to create a pfile is now automatically set to an IMPlementor.
+   (no more Tester pfile)
+8) sendstat.c updated, encode_url_post_data() removed.
+9) fixed the -levels command line argument.
+
+1stMud version 4.2
+------------------
+1) Renamed most/all data structures.  Renamed most/all macro's.
+   Wanted to see something different than the standard age old
+   names when I edit.
+2) wiznet function readone/modded. Can now log messages to file.
+   The OBJ_DATA paramter was changed to const void * to make use of
+   $t $T in act.
+3) Added MUDVERSION define.
+4) All the EDIT_BLAH macros combined to 1: GetEdit().
+5) Boot_db() updated, log_string() updated, now only prints the time when it changes 
+   from the last log message.
+6) Time data now saved with tablesave functions.
+7) *nix users now have user limits set. (experimental)
+8) Added some more info to mud_data.
+9) Added a const char *n_fun to DO_FUN and OLC_FUN functions to hold the
+   command name, added cmd_name() function to return the in-game name of a do_fun pointer.
+10) Added cmd_syntax() to show syntax of a command using n_fun.
+11) olc_msg() function, like chprintlnf, buf shows the editor name as a prefix.
+12) Added strip_cr() function, and ../bin/d2u (dos2unix)
+13) Removed MXP parsing from d_print() and added it to process_ansi_output(),
+    renaming it to convert_color_mxp_tags().
+14) Added group prompts. Dawn of Time gets credit again.
+15) Redid the d_write() function, as well as the MCCP part per DoT style (adding write_to_socket()).
+16) Added a needed {x to the end of automap descriptions.
+17) Updated nanny stuff. Added colors and nanny_table[] for do_sockets().
+18) Moved gsn.h, gcn.h and gci.h into index.h
+19) DAM_BLAH defines changed to dam_class enum.
+
+1stMud version 4.1
+------------------
+1) FALSE and TRUE defines changed to lower case, easier compatability with c++.
+2) CLAN_DATA moved from room data to area data.  This is so an area can be a
+   clan area and have all the objs/mobs within affected as well.
+3) money_t typedef added for variables handling cash (unsigned long).
+4) Colour code modified and moved to ansi.c.
+5) EXTRA_DESCR_DATA changed to ED_DATA.
+6) recycle.[ch] redone, new macros control the functions.
+7) smash_tilde() removed.
+8) vnums.h added to control the vnum_table easier. Any new vnum definitions should
+   go there.
+9) Guilds removed from class data to room data.
+10) Donation pit replaced with donation rooms (misc, weapon, armor) that use the
+    ROOM_SAVE_OBJS flag.
+11) table*.[ch] renamed to data_table.[ch].
+12) stringf(), draw_line() redone. strlen_color() redone and renamed to cstrlen().
+    smash_colour() redone and renamed to strip_color().  skipcol(), skiprcol(),
+    count_codes(), str_rep(), and stri_rep() redone.  color_to_tilde()
+    redone and renamed to show_tilde().  tilde_to_color() redone and renamed to
+    hide_tilde().  format_string() redone.
+13) atov define added, like atol() but for vnum's.
+14) auctions now support gold/quest/trivia for currency.  barter channel added to
+    replace 'auction talk <msg>'.
+15) More sector types added (road, path, swamp, cave) with more symbols and 
+    colors on automap.
+16) command flags added.
+17) Fixed a small bug with is_stat().
+18) Added 'note reply', 'note forward', 'note read again', redid
+    'note list', and added 'subscribe' command to sub/unsubscribe from boards.
+19) Channel social handling redone.
+20) Clan bank accounts added. (gold and questpoints)  Use the 'bank' command in a 
+    bank room/clan area. Bank command redone, net_wort(), check_worth() and
+    do_tax() immortal command added..
+21) Removed clear_char() function. (not needed with recycle functions)
+22) MAX_GREETING added, load_helps and show_greeting modified to handle multiple
+    greeting texts.
+23) Unecessary tables removed from const.c and tables.c.
+24) MAX_STATS increased to 30.
+25) build_player_index() added (RogueMUD).  Inits a global variable 'pfiles'
+    with the count and a list of names.
+26) Reset Messeges added to area data, and area_update() now saves changed areas.
+27) Changed str_dup() to use strdup() instead of alloc_mem().  Added str_dupf(),
+    and replace_stringf() functions.
+28) removed do_dump(), added level_percent(). (like number_percent() except for levels)
+29) Redid capitalize(), strlower() and strupper() functions. Added Lower(), Upper(),
+    isavowel(), intstr(), fsize() and aoran().
+30) Redid do_memory(), more complete reporting.
+31) gsn_lookup, gcn_lookup, dofun_lookup, spell_lookup ect, replaced with index_lookup().
+32) dam_message() improved.
+33) read_bug() added to log file/line on read errors.
+34) added 'flag obj ...' to do_flag().
+35) Stat rolling added to creation, immortals can choose how the log on.
+36) Global Class Indexes added (GCI).  This way you can use the indexes in the code
+    and have them relate to the right class in the game.  ex.  is_class(ch, gci_thief)
+37) GLOBAL_TABLE, and GLOBAL_STRUCT macros added to globals.h. A rundown on the macros:
+	a) GLOBAL_LIST(type, blah) defines:
+	 - blah_first and blah_last for a list.
+	 - top_blah as a counter.
+	 - blah_zero for table operations.
+	 - blah_free for a recycle list.
+	 - top_blah_free for a recycle list counter.
+	b) GLOBAL_TABLE(type, blah, table1) defines:
+	 - blah_table1 for a table.
+	 - top_blah as a counter.
+	 - blah_zero for table operations.
+	 - blah_free for a recycle list.
+	 - top_blah_free for a recycle list counter.
+	c) GLOBAL_STRUCT(type, blah) defines:
+	 - top_blah for a counter.
+	 - blah_zero for atable operations.
+	 - blah_free for a recycle list.
+	 - top_blah_free for a recycle list counter.
+    This has allowed for more standardization with recycling, editing, and linking.
+40) DIFF_BIT macro added. (get bit A without bit B)
+41) Added IS_PLAYER, GET_CLAN, SEASON, and GET_NAME, titlebar, titlewidth, titlefill,
+    str_width, str_align, and str_fill macros.
+42) win32/winstuff.[ch] moved into main .[ch] files.  ../win32 directory renamed to
+    ../lib.
+44) All olc editors now have a blah_create, blah_delete and blah_list functions.
+45) LinkList, LinkNext, LinkNextName, and CheckValid macros added for structures.
+    Easier to make linked lists.
+46) data_comm_type structure combined with datatable_type structure.
+47) added get_char_vnum() (id for players), get_pc_world(), is_player_name(),
+    get_player_name() and is_donate_room().
+48) do_commands() and do_wizhelp() redone.
+49) dam_each[] tables removed in magic spells, not compatible with a max level
+    over 60.
+
+1stMud version 4.0c
+-------------------
+1) Added more info to sendstat.c, on the server end firstmud.com now uses
+   post.php instead of post.cgi.
+2) Fixed bugs found in v4.0 posted on list@firstmud.com.
+3) Updated tablestat.c, cols_newline macro added.
+4) Removed some unecessary tables in tables.c
+5) string.c:
+	a) added indent_string() function.
+	b) Added .n# (indent string by <num>) to string editor.
+	c) Added .{ (strip colour) to string editor.
+	d) Added strs_rep, str_rep, stristr, strsi_rep, and stri_rep functions. (see comments)
+	e) Updated strlen_colour function.
+6) Added game stats to mud_info structure. (showstats 0), mudedit_reset() added to reset the stats.
+7) Added do_grlist() command to replace do_groups(), updated do_slist().
+8) Removed signals.h, music.h, save.h and lookup.h.
+9) globals.h now has GLOBAL_LIST macro, defining a linked list, a blah_free pointer for recycle.c
+   and blah_zero for tablesaving stuff.
+10) cmd_type, clan_type, and song_data structures moved to structs.h
+11) .indent.pro redone again, using long name options for readability.
+12) compiling in msvc++ in c++ had some errors -> fixed.
+13) explored rooms code updated a bit.
+14) save_room_objs function added to save objects in a room to a file.  Using that for the player
+    homes code, any object (ex. furniture) you bring to your home will be saved.
+    Also added 'home door' to flag doors and 'home recall' to set pcdata->home_room used in gohome.
+15) Updated win32 files, http://firstmud.com/setup.php redone.
+16) program_flow() function redone. do_programs() command added.
+17) int autoset; added to mob_index_data.  Values are AUTODEFAULT, AUTOEASY, AUTOSET, AUTOHARD, AUTORANDOM.
+    int random; added to mob_index_data.  Controls the randomness of mob level in create_mobile().
+    area file version increased 3 -> 4.
+19) PROG_CODE and PROG_LIST structures redone, programs are now disabled if an error occurs.
+20) fwrite_obj() and read_obj() redone.
+21) Added area_lookup() and area_begin() functions.
+22) More updates to OLC and tablesave stuff.
+
+1stMud version 4.0
+------------------
+ 1) Added autoprompt toggle, for those who like prompts to always show.
+    ('prompt auto').
+ 2) Fixed a bug in do_wiznet(), wiznet_lookup() should return -1 on failure.
+ 3) Data file reading/writing unified even more in tablesave.c.  3 new macros
+    (rw_table, rw_list & rw_single) and enum action_types added, all save/load
+    functions redone.
+ 4) WhoStrings were too long, changed from 14 chars to 12 chars.
+    (string char <char> who <string>)
+ 5) AREA_DATA pointer added to PROG_CODE structure for easier saving.
+ 6) OLCED macro added to handle all OLC functions.
+ 7) disabled_for added to DISABLED_DATA to disable a command to a specific person.
+ 8) A default_race was added for area loading, so you won't have
+    any problems loading areas with non-existant races.
+ 9) OLCED_DATA added and core OLC interpreter redone.
+10) Redid ban checking, now accepts wildcards instead of the normal prefix/suffix
+    thing (ex. *.host.dot.*).  Removed 'permban' command, all bans are permanent now.
+11) Added CHANNEL_DATA, and redid the channel code. Channels are now OLC'able.
+    2 new files, gcn.h and channels.c.
+12) Moved all .h files to an h directory, and all .o files go to an o directory.
+    Win32 users need to add '/I C:\full\path\to\1stMud\win32' and
+    '/I C:\full\path\to\1stMud\src\h' to compiler options.
+    Makefile redone, automatically puts all .h files in the right directory
+    before compiling.
+13) Channel histories redone. Public channel history added to webserver.
+14) olced_addprog, and olced_delprog redone.
+15) validate functions now have thier own entry in olc_comm_type.
+16) bug(str, 0); changed to bug(st18); use bugf(str,...); for formating.
+17) most NULL and '\0' string checking replaced with IS_NULLSTR macro.
+18) ./rom program can now be run safely in any of the 1stMud directories.
+19) crs_data added (Copyover-Reboot-Shutdown Data). do_copyover, do_reboot,
+    and do_shutdown commands redone.
+20) Added ../bin/ directory to store the rom executable, scripts ect.
+21) ../backup directory added and ../bin/backup script added. To easily
+    backup pfiles/data/area/src, type 'make backup'.
+22) Removed the ../gods/ directory, personally found it unuseful.
+23) Added SIGABRT (from abort() functio14) to signal hander, and a call
+    to atexit() (from exit() functio14) to basically make sure the mud is 
+    saved and cleaned up before exiting.
+24) Moved all the signal handling to seperate files, crash_info structure added.
+25) added fwrite/fread array macro and some new KEY macros for saving in save.c
+    (new pfile versio14).
+26) Added *basic* support for MXP, MSP, and PUEBLO. By basic I mean it only
+    detects them.  MCCP now supports versions 1 and 2.  Also added terminal
+    type detection.
+27) Jukebox Songs are now OLC'able via songedit.  ../data/music.dat changed.
+28) mob_tell() function redone.
+29) add_buf() renamed to bprint().  bprintf(), bprintln(), bprintlnf() added.
+30) Standard C header files put into merc.h
+31) 1stMud is now configured using autoconf.  1st time users will have to
+    change to the ./src/config directory and type ./configure, which will
+    make a Makefile in ./src and a config.h file in ./src/h.
+32) Random Room Exits code for resets redone.  Examples:
+    reset 1 random 0 world   - adds a random exit to a random location in the world
+    reset 2 random north area - adds an exit north to a random location in the area
+    reset 3 random 4         - oldstyle randomizes 4 exits in room.
+33) MUD data added. (mud_inf15).  Has various flags to control gameplay from
+    within the game. See mudedit command.
+34) Macros added for handling of player gamestat's.
+35) Descriptor data now saves in player file on copyover. (fread/fwrite_descripto18)
+36) Any tildes (~) entered by a client are now auto-turned into the colour code ({-)
+37) Changed write_to_buffer() to d_print(), d_println(), d_printf(), d_printlnf().
+    Changed write_to_descriptor() to d_write().  Changed page_to_char() to sendpage().
+38) Went ahead and added (almost)full implementation of most client enhancements. (client.c)
+39) Added dwrap(), dwrapln(), dwrapf(), dwraplnf() to send formatted text strings.
+40) Added tablesave.h so all data saving does not have to be in tablesave.c
+41) Added fwrite_int() macro and  fwrite_string(), fwrite_bit(), fwrite_word(), and
+    format_tabs() functions.  Save.c redone.
+42) Added stances. New commands are do_stance, do_autostance, do_sskill.
+43) Added ignore code, supports ignore flags.
+44) Added missing custom colour codes to dam_message().
+45) Redid weather/time system. Weather is now based on individual areas, aedit_climate added.
+46) Added PROTOTYPE and PROTOTYPEF macros to handle prototypes.
+47) Added 'sacrifice all'.
+48) Removed log cycling from startup file, stderr now duped to a log file.
+49) Added log_error to format perror in log_string format.
+50) Added directories table so the mud can check that needed directories exist, else create them.
+51) Main program argument checking redone, use './rom -v' to disable the log file.
+52) Stat command redone, tablestat.c added.
+53) Set command redone, tableset.c added.  This also nullified the use of the
+    string command.
+54) sendstat.c added, every 24 hours it sends data to firstmud.com, reporting
+    common stats about your mud. (Name, port, address, ect).  This will be used
+    to keep a list of muds using 1stMud (ported from dawn1.69q).
+55) fileio.c, READ_DATA, and WRITE_DATA added.  READ_DATA optimizes loading data
+    from a file, by dumping the entire file to a string and parsing that instead
+    of a stream.  WRITE_DATA writes data back to disk safely using a temp file.
+    open_read, close_read, open_write, and close_write are used.
+56) Scroll command remade into Screen command.  This controls how many lines per
+    page and how many characters per line.  (get_scr_cols and get_scr_lines are
+    used).  3 Macro's were added to merc.h, init_cols, reset_cols, and print_cols
+    to init variables used, reset variables used, and print data in columns.
+57) "thinking" added to channel code, see '<channel> ?' for help.
+
+1stMud version 3.9b
+-------------------
+ 1) Added set_shutdown() function to unify the shutdown/reboot process.
+ 2) Fixed a bug with the definition of _GNU_SOURCE in comm.c
+ 3) Added NO_VTIMER define for non-support of a virtual timer.
+    If NO_VTIMER is defined, the mud will use the SIGALRM handler.
+ 4) Cygwin users now have use of signal handling.
+ 5) 'memory stats' added to memory command.
+ 6) HOSTNAME global variable added to get/use your machine's hostname
+    with the webserver. (Chili)
+
+1stMud version 3.9
+------------------
+ 1) Prompts are now only shown after hitting enter, when fighting,
+    or when in OLC.
+ 2) Aliases now work in OLC editors.
+ 3) page_to_char() redone.
+ 4) last_command, and last_command2 renamed to last_func_long, and last_func_short,
+    update_last_func() added to easily update them.
+ 5) update_last_func() calls added to update_handler().
+ 6) remove who_name from class_type and race_type, name will do fine.
+ 7) There are now more than 1 hero level, depending on what value MAX_REMORT is.
+    Each extra remort you can go 1 level higher than before. (calc_max_level(),
+    and high_level_name() adde 4)
+ 8) Made some large updates to the web server.
+ 9) Wars now use linked lists to keep track of players and players stats.
+10) Shortened ticks from 60 secs to 45 secs.
+11) Wars now support 'decoys'.  Decoy mobs look just like
+    the combatant and can be killed or kill.  Limbo area needs a mob using
+    vnum 30 for decoys to work.
+12) Added sex wars.
+13) Redid/Updated parts of the global quest code, now uses a linked list. :)
+14) Wars now save over copyover/reboot/shutdown's.
+
+1stMud version 3.8
+------------------
+ 1) Redid most of the colour code, making it more functional and more speedy.
+    New custom colour code requires more memory in pc_data, but allows for greater
+    variety of colours.  Pfile versions increased for this change.
+ 2) Added NO_WEB define in Makefile to turn off the webserver.
+ 3) Added 1stMud.license to distribution.
+ 4) Updated help 1stMud and help greeting.
+ 5) Updated war.c
+ 6) skill/group creating didn't reallocate memory for players online.
+    This is now fixed.
+ 7) Added 2 new functions fopen_temp() and fclose_temp() which open files
+    with a ramdom temporary name, and rename to the proper name when closed.
+    Added FILE_DATA structure to use with these functions.
+ 8) Added do_ncheck() to board.c, and used when first logging on instead of
+    showing all the boards.
+ 9) Fixed bugs in stringf(), draw_line(), and strlen_colour() which didn't
+    check for custom colour codes.
+10) String hashing is now a bit more complicated, basically controlled by a
+    define STRHASH: 0 = no string hashing, 1 = fread_string() hashing only,
+    2 = full string hashing.
+11) Changing a race's name in raedit would make mobs with that race load
+    with a NULL race, the area file needed to be saved before a boot. Now
+    fixed.
+12) Added setting of timezone for players, str_time() should always be used
+    to show the time.
+13) Added more signal info to crashes, added a virtual timer to use for
+    looping instead of alarm().
+14) Added do_crash() command to test the crash handler.
+
+1stMud version 3.7
+------------------
+ 1) Added min_level, max_level, versioning, and lvl_comment to area_data,
+    automatically scans old credits and sets the values in convert_area_credits(),
+    supports stock ROM format as well.
+ 2) Added sorting of areas, areas command redone.
+ 3) redid automap again, map command added to display a larger map with
+    symbol descriptions (Dingo).
+ 4) Added show_desc() to format room descriptions in do_look().
+ 5) Redid stringf() and draw_line() to use NAWS screen width.
+ 6) Redid explored rooms code, added 'explored list' to list areas sorted
+    by explored percentage.
+ 7) Added set_on_off() and print_on_off() functions, redid do_autolist(),
+    do_channels(), and do_wiznet() functions.
+ 8) Fixed a bug in 'cmdcheck missing' which happened on the cmd table-to-list
+    change.
+ 9) The mud now handles SIGCHLD signals to stop zombie processes in the shell.
+10) do_wizhelp() and do_commands() are now sorted by name.
+11) To link areas, helps, commands, and socials... you now use add_area(),
+    add_help(), add_command(), and add_social() respectivly.  To unlink use,
+    unlink_area(), unlink_command(), and unlink_social()... (Helps can still use
+    the UNLINK() macro to unlin11).  This is so all the hash, sorting, and normal
+    lists are kept up to date.
+12) Removed obj_to_keeper() function, sorting of objects to shopkeepers is now
+    done in obj_to_char().
+13) Added temp file saving to save_area_list() and save_area().
+
+1stMud version 3.6
+------------------
+ 1) Fixed a bug in is_same_clan().
+ 2) Added ability to change immortal levels for commands,
+    skills, and helps ect.  Syntax is:
+    ./rom levels [old max level] [new max level]
+ 3) Updated the automap to show proper sector symbols/colors, and
+    to not break up colour in the room description.
+ 4) Fixed a bug that didn't delete empty corpses from corpses.dat
+ 5) Fixed a bug in extract_char() which crashed the mud when a non-clanned
+    player died.
+ 6) Fixed the order of arguments in do_cmdedit() and do_cedit().
+ 7) Updated the add_reset() function to properly place specified resets.
+ 8) Updated do_resets() to properly add an object to a mobs inventory.
+
+1stMud version 3.5
+------------------
+ 1) Fixed a bug with resets not reseting on bootup.
+ 2) Fixed/redid sort_helps().
+ 3) Added freadline() function.
+ 4) Added NO_STRHASH define to toggle on/off string hashing.
+ 5) Converted command/social/race/clan/deity tables to linked lists.
+    Data files for these structures were changed.
+ 6) Fixed a bug in do_practice()
+ 7) Removed shortname from clan ranks.
+ 8) Added social and command hash tables.
+
+1stMud version 3.4
+------------------
+ 1) Added FORMATF() function from dawn1.69q, redid the stringf() 
+    function.
+ 2) Added autoarmor() & autoweapon() for objects, and autoset(),
+    autohard() and autoeasy() for mobs.  Added 'areaset' command
+    to set whole areas at a time.  Obj/Mob olc editors also have
+    autoset commands.
+ 3) Re-Added alloc_perm() function. Used by the GET_FREE() macro.
+ 4) Added member data to keep track of clan members. New command
+    'roster' displays members of a clan.  Leaders now show in
+    do_clist().
+ 5) Added channel histories.  Syntax is '<channel> -h' to display
+    the last 20 messages on that channel.
+ 6) Redid the webpass command so it doesn't crash the mud.
+ 7) Clans are now loaded before areas, so clan rooms are valid.
+
+1stMud version 3.3
+------------------
+ 1) Fixed a bug with quest objects.
+ 2) Added stopping of auctions on copyover/reboot/shutdown.
+ 3) Fixed a bug in board_table[].
+ 4) Disabled copyover under windows.
+ 5) Created a separate mailing list for 1stmud.
+    You can subscribe at the webpage, to post
+    messages the address is list@firstmud.com
+ 6) Added buddy command, and btalk channel.
+ 7) Added sorting of commands, helps, socials, and skills.
+
+1stMud version 3.2
+------------------
+ 1) Fixed a bug in multiclass.c that left some groups/skills
+    unavailable.
+ 2) Added 'webpass' command for imms so each imm has thier username
+    and webpass to access the webserver's secure url 
+    (http://mud.is.here:<port>/staffarea).
+ 3) Added 'spellup' command for imms. To add new spells simply
+    add the spell_fun pointer to the qspell_index in act_wiz.c.
+ 4) Modified the 'who' command output.
+ 5) Added 'strkey' command, allows you to set a personal
+    command character for the string editor.
+ 4) Fixed a bug that didn't link a note if no notes existed on board.
+ 5) Added run command, which was missing from dofun.h
+ 6) Added pload and punload imm commands.
+
+1stMud version 3.1
+------------------
+ 1) Fixed a bug in do_say().
+ 2) Fixed a bug in load_objects().
+ 3) Fixed a bug in HandleCommandsRequest().
+ 4) Fixed a bug in fwrite_char().
+ 5) Redid act_new() and added perform_act() function.
+ 6) Added new channel code, allows for socials (<channel> + <social>)
+    and emotes (<channel> ! <emote>).  Two new functions,
+    public_ch() and channel_social() standardize channels.
+ 7) Added nogocial() command, toggles display of socials/emotes
+    over public channels.
+ 8) Added OOC channel and command.
+ 9) Fixed a bug in fwrite_obj().
+
+1stMud version 3.0
+------------------
+ 1) Added clanrecall, clanadmin and join commands.  All the clan
+    stuff put into a clan.c file.  Leaders can use the clanadmin
+    function to invite players our outcast members ect.
+ 2) Fixed crash when typing 'who asdfasf' ect.
+ 3) Added room and object programs (rpedit, opedit), needed something big for v3.0
+ 4) Added an internal web server.  You will have to edit webserver.h
+    for your mud.  It means another port, but its easy to remove
+    if you don't want it.
+ 5) Added slist command.
+ 6) Added deities, with OLC support (dedit). Worship command added to change deities
+    for 250 quest points.
+ 7) Added rearrange command to cmdedit, allows you to move 1 command
+    before another.
+
+1stMud version 2.9
+------------------
+ 1) Newly created races now show in creation.
+ 2) Re-added a missing safe room check for plr vs. plr.
+ 3) Donate command added.
+ 4) Items in donation pit now save through boots.
+ 5) Added whois counter-part 'whowas' command.
+ 6) Added plr vs. plr arena, see 'arena' command.
+ 7) Added more Q/A to the F.A.Q.
+ 8) Added banking with a share value economy.  Banks are defined
+    with the ROOM_BANK flag.
+ 9) Changed do_score default colourset codes.
+
+1stMud version 2.8
+------------------
+ 1) fixed a link bug in obj_from_room() and obj_to_room().
+ 2) New global quest data file format using tablesave functions.
+    Be sure to remove your old gquest.dat file if upgrading.
+ 3) Added clan ranks, 6 in total, added rank command to olc clan editor.
+ 4) Added 3 new commands, do_clist(), do_cinfo(), and do_promote().
+ 3) Added get_sector_color() and get_sector_symbol() to automap.
+
+1stMud version 2.7
+------------------
+ 1) More bits added, fread_flag() and fwrite_flags() where changed to
+    accomodate new bits, but they can still read in stock area files
+    properly.
+ 2) From now on each distro will include a patch file from previous version
+    to the next version. (for ppl who have already made changes
+    to one version and want to upgrade to the nex20)
+ 3) Started work on a F.A.Q for 1stMud. (1stMud.faq)
+ 4) Fixed a bug in NAWS telnet negotiation.
+ 5) Fixed a bug that left colour off at login.
+ 6) Added LINK(), UNLINK(), LINK_SINGLE(), UNLINK_SINGLE() and CHECK_LINKS()
+    macros found in SMAUG muds.  Converted all linked lists to doubly
+    linked lists, lets hope i didnt miss anything or wierd things will 
+    happen.
+ 7) Redid help editor, got rid of all that HELP_AREA crap. If you're upgrading
+    be sure to combine your helps into 1 file help.are.
+ 8) Added globals.h file, controls global variables.
+ 9) Moved MAX_LEVEL back to 60.
+
+1stMud version 2.6
+------------------
+ 1) Updated race_lookup() to return -1 and fixed a few
+    places where it looped through the race table starting at 1.
+ 2) Fixed a bug in raedit_mstats() which didn't set max stats.
+ 3) Added automated auction code, supports quest items. New commands
+    are do_auction() and do_bid().
+ 4) Redid stringf(), smash_colour(), tilde_to_color(), color_to_tilde(),
+    and draw_line() functions. All now return a string instead of
+    strcpy'ing to a supplied buffer.
+ 5) Fixed a the bug that didn't capitalize new player names.
+ 6) Added 'remove all' and 'remove all.name'.
+ 7) Added autodamage command.
+
+1stMud version 2.5
+------------------
+ 1) Added TTYSPEED to telnet code to test if a client
+    is telopt capable. (Stops the wierd characters with Gmud) (Dingo)
+ 2) Updated raedit_skills() - olc_race.c
+ 3) Updated raedit_create() so it doesn't crash on save_races().
+ 4) Updated the edit_start() function and added get_olc_show() (olc. 3).
+
+1stMud version 2.4
+------------------
+ 1) fixed another bug in flag_value().
+ 2) re-added olist, mlist, rlist, to room editor.
+ 3) Changed most of the strings to 'const' strings.
+ 4) Added player homes system.
+      -  to purchase a home you must be in an area
+         flagged AREA_PLAYER_HOMES and in a room
+	 flagged HOME_ENTRANCE.  You can have up to
+	 5 rooms, mobs/objects/ect are added via
+	 home_table[].
+ 5) Fixed a bug in map_exits() that crashed when switched.
+ 6) Added AREA_CLOSED flag to block access to unfinished areas.
+
+1stMud version 2.3
+------------------
+ 1) fixed a bug in cmd_eval_mob() with using flag_value().
+ 2) fixed a bug in is_clan() in handler.c.
+ 3) fixed a bug in validate_hmv for class editor.
+ 4) remorts no longer have to have 40 + race points.
+ 5) put automap in autolist
+ 6) fixed a bug in gredit_create().
+ 7) fixed a bug in raedit_create().
+ 8) fixed a bug where clanned morts couldn't see rooms.
+ 9) fixed a bug in generate_gquest(). 
+10) Many thanks to Steven Manning and others for debugging.
+
+1stMud version 2.2
+------------------
+ 1) Fixed a bug in check_social() and do_socials().
+ 2) Added corpse saving through reboots. ROOM_VNUM_MORGUE is defined as limbo (2).
+ 3) Fixed a bug in extract_char() if player's clan hall doesn't exist.
+
+1stMud version 2.1
+------------------
+ 1) Added tablesave.c file, replaced all load/save functions
+    to new data file format.
+ 2) Fixed a bug in flag_value() wich didn't return NO_FLAG when
+    a flag wasn't found.
+ 3) Removed sh_int and sflag_t types.
+ 4) Removed alloc_perm() and replaced with alloc_mem().
+
+1stMud version 2.0
+------------------
+ 1) Changed character output functions:
+    a)   chprint   - send basic output
+    b)  chprintln  - send basic output with trailing '\n\r'
+    c)  chprintf   - send formated output
+    d)  chprintlnf - send formated output with trailing '\n\r'
+ 2) Fixed a bug in 'aedit delete.'
+ 3) Added OLC Command editor (cmdedit).
+ 4) Added OLC Skill editor (skedit).
+ 5) Added OLC Group editor (gredit).
+ 4) Added OLC Race editor (raedit).
+ 5) Added OLC Class editor (cledit).
+ 6) Added data directory to keep the data files.
+ 7) Removed pose command, doesn't conform to a variable class table.
+ 8) Added player_list to optimize aggr_update().
+
+1stMud version 1.9
+------------------
+ 1) Added some customized OLC2.1 code, makes adding new
+    editors easier.
+ 2) Added warfare arena code.
+ 3) Added Explored rooms code.
+ 4) Added automap code/command.
+ 5) Added OLC Clan editor (cedit).
+ 4) Left Tester pfile in player dir, password tester.
+
+1stMud version 1.8
+------------------
+ 1) fixed a bug with gquest code
+ 2) Redid flag_lookup, flag_value functions.
+ 3) Added draw_line() function.
+ 4) Redid alloc_mem, free_mem, and added realloc_mem.  This also fixes
+    a bug with more than 2 ppl logged on.
+
+1stMud version 1.7
+------------------
+ 1) Added quest code and quest area.
+ 2) Added basic CYGWIN support, still recomended to use
+    MSVC++ 6.0 under windows.
+ 3) Added remort multiclassing.
+ 4) removed print_flags() and fwrite_flag() functions, replaced with
+    fwrite_flags().
+ 5) Added Global Quest code.
+
+1stMud version 1.6
+------------------
+ 1) Redid string editor.
+ 2) Made note writing use new string editor.
+ 3) Fixed a bug that didn't save notes to note directory.
+
+1stMud version 1.5
+------------------
+ 1) Added 'hunt' skill, mobs hunt players who flee as well. Added because
+    its one of the more difficult snippets to add (especially in c++).
+ 2) Moved nanny() to a seperate file. (nanny.c)
+ 3) Added 'announce' system (found in act_comm.c). The 'info' command now
+    toggles info settings. Added annoucements for levels, deaths, logins,
+    logouts, and notes.
+ 4) Added new do_help() function, old one renamed to do_oldhelp() and used
+    from within the code.
+ 5) Fixed a bug with NULL_FILE and sockets under win32.
+
+1stMud version 1.4
+------------------
+ 1) Fixed a bug in wiznet()
+ 2) Added telnet negotiation code by Dingo of Purple Dragon MUD.
+ 3) Added MCCP or MUD Client Compression Protocol -- 
+    Win32 users need to define ZLIB_DLL && _WINDOWS and add zlib.lib
+    to the library files in order to compile using MSVC++, or 
+    define NO_MCCP to disable MCCP.
+ 4) Included MSVC++ project files, assumes a location of C:\mud\1stMud.
+
+1stMud version 1.3
+------------------
+ 1) Fixed a bug in olc_save.c that added 'social.are' to the area.lst
+    which should only happen if CONST_SOCIAL is defined.
+ 2) Fixed a mprog bug that when switched into a mob, the act_new()
+    function would return without sending any text.
+
+1stMud version 1.2
+------------------
+ 1) Fixed a bug in act_new that didn't show anything when called.
+ 2) Defined bitvectors so you don't have to type out the long version.
+ 3) Added 2 new races, dragon and orc.
+
+1stMud version 1.1
+------------------
+ 1) Converted all hp/mana/move variables to long int's.
+ 2) Commented out some of the extra warnings in the Makefile (some of you had trouble compiling)
+ 3) Fixed a few of the atoi() calls that should be atol() for vnum_t type.
+ 4) Redid .indent.pro file for 'make indent'.
+ 5) Added 2 new classes, Paladin and Ranger. For now they are just copies of Cleric and Warrior.
+ 6) Removed title_table[]... can't think up sex specific titles for 6 classes.
+ 7) Started documenting changes to 1stMud.
+ 8) Removed the social.are entry in the area.lst, shouldn't be there. (most common email i got)
+ 9) Fixed a few well known mem leaks in save.c
+
+1stMud version 1.0
+------------------
+ 1) Added colour code, added colour to channels/score/who.
+ 2) Replaces ROM note system with Erwins Board System, a bit modified.
+ 3) Added Dual Wielding. (Extra wear slot)
+ 4) Converted the mud to compile under g++, and under windows using MSVC++.
+ 5) Redid Makefile's (no more adding .o files), and added some more warning options.
+ 6) Added 'aedit delete', 'redit delete', 'oedit delete', 'medit delete', and 'mpedit delete'.
+ 7) Added vnum_table[] to keep track of hard coded vnums.
+ 8) Stripped down all not needed areas using aedit delete.
+ 9) Upped max level to 209, so hero level is 200.
+10) Added vnum_t type to easily change vnum size. (defined as long int)
+11) Added flag_t type to use for flag values. (defined as long long int)
+12) Added CH_CMD() and MAGIC() macros for commands and spells.
+13) Added top 50 stat records.
+14) Added gsn consolidation via GSN macro.

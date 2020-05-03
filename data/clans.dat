@@ -1,0 +1,23 @@
+
+#CLAN
+name			ADMIN~
+who_name		{y-{Y={RAD{rM{RIN{Y={y-{x~
+description		The Immortal Council~
+rooms			1213 1200 @
+flags			no_pk immortal~
+gold			100000
+questpoints		30000
+ethos			true-neutral~
+rank			1 Newbie~rank			2 Quester~rank			3 Manager~rank			4 Supervisor~rank			5 General~rank			6 Implementor~#END
+
+#CLAN
+name			Loner~
+who_name		{R[ Loner ]{x~
+description		~
+rooms			3001 3 @
+flags			independent~
+gold			0
+questpoints		0
+ethos			true-neutral~
+rank			1 {r---{x~rank			2 {r---{x~rank			3 {r---{x~rank			4 {r---{x~rank			5 {r---{x~rank			6 {r---{x~#END
+#!

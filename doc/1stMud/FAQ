@@ -1,0 +1,251 @@
+1stMud F.A.Q
+------------------------------------------------------------------------------
+
+1.  How do I add a new race?
+
+    Its really quite simple, type 'raedit create <race name>'.
+    This will enter a new race and set an OLC editor for you.
+    To make the race usuable by players you have to set it as
+    a 'PC' race.
+
+------------------------------------------------------------------------------
+
+2.  How do I add a new class?
+
+    Add a class index entry in index.h. Once in the game type
+    'cledit create <class name>'.  This will create the
+    class and set all skill levels to immortal.  Then set the
+    class index.
+
+------------------------------------------------------------------------------
+   
+3.  How do I add a new clan?
+
+    Type 'cedit create <clan name>' (Ahhhhhhh.... OLC).
+
+------------------------------------------------------------------------------
+
+4.  How do I add a new skill/spell?
+
+    After you have written your spell or skill, if it had a gsn 
+    (global skill number) add a gsn entry to index.h, and/or if it has a 
+    spell function add an entry to magic.h.  Compile the code and if all goes
+    well, copyover. Then in the mud type 'skedit make <skill/spell name>'. 
+    Set the appropriate gsn/spell entries and other values. If the skill 
+    has a command see #6, how to create a command.
+
+------------------------------------------------------------------------------
+
+5.  What is the point of the macro headers for functions (Do_Fun(), 
+    Spell_Fun(), ect.)?
+
+    This is done so you can easily change the arguments needed by
+    those type of functions.
+
+------------------------------------------------------------------------------
+
+6.  How do I create a new command?
+
+    Write the command and add an entry to dofun.h.  Once in the mud type 
+    'cmdedit create <cmd name>' and set the do_fun pointer.
+
+------------------------------------------------------------------------------
+   
+7.  How do I run 1stMud in windows?
+
+    You can compile the code in both MSVC++ 6 and Cygwin unix emulator. See
+    http://firstmud.com/setup.php for instructions on setting up both.
+    
+    After you have built rom.exe, run it and connect using 'localhost <port>' 
+    (127.0.0.1).
+
+------------------------------------------------------------------------------
+
+8.  How do I make a new social?
+
+    By using the social editor.  Type 'sedit create <social name>'.
+
+------------------------------------------------------------------------------
+
+9.  1stMud areas look different then ROM areas, will they still load?
+
+    Yes. If you want to load any stock ROM area file, just add it to
+    the area.lst.  Keep in mind that the area file might still have
+    vnums that don't exist and will abort bootup.
+
+------------------------------------------------------------------------------
+
+10. How do I use the patch file?
+
+    Patching 1stMud is now somewhat easier, in every distribution you will
+    find a vXXtovXX.tgz file containing the necissary patch files. To patch
+    an old version move that file to its home directory (ex. 1stMudvXX) and
+    extract it.  Run the vXXtoXX.sh script to patch the old distribution.
+    Modified files will be saved in .rej files to manully add.
+
+------------------------------------------------------------------------------
+
+11. How do I add custom colour to something?
+
+    Define a number to use in ansi.h (ex #define _NEWCHANNEL 43) and increase 
+    MAX_CUSTOM_COLOUR. You then have to add an entry to the color_table[] in
+    tables.c where you define the default colour.  Anywhere you want to add 
+    its colour you use the CTAG() macro (ex. CTAG(_NEWCHANNEL) ).
+
+------------------------------------------------------------------------------
+
+12. Why the change to chprint, chprintln, chprintf, and chprintlnf functions?
+
+    Just personal preference.  You can add macro's to change them to yours.
+    (ex. #define send_to_char(txt, ch)	chprint(ch, txt) )
+
+------------------------------------------------------------------------------
+
+13. How do I change the maximum level of 1stMud?
+
+    First you would change MAX_LEVEL in merc.h to a new level, keeping in mind
+    the old max level.  Lets say it used to be 60, and we changed it to 110.
+    To take care of immortals in player files, first increase PFILE_VERSION in
+    defines.h by 1. Then in load_char_obj() you'll find something like this at the bottom:
+    set_player_level(ch, 0, 0, 0); we can now change that to:
+    set_player_level(ch, 60, 110, #);, where 60 is the old max level, 110 is
+    the new max level, and # is the new pfile version.  That being done, do a
+    clean compile.  Now, change directory to the area directory and run
+    '../src/rom relvl 60 110'  This will change any old immortal levels in
+    data files and areas, to new immortal levels.  That should be it.
+
+------------------------------------------------------------------------------
+
+14. Why doesn't 'make' work under FreeBSD??
+    or
+    Why am I getting 'Error expanding embedded variable.' when running make??
+
+    The Makefile(s) require GNU make.  You will have to use 'gmake' instead.
+
+------------------------------------------------------------------------------
+
+15. How do I use 'gdb'?
+
+    Briefly:
+
+       gdb rom
+       break <function>
+       run <port>
+       (program breaks at function or hit CTRL-C to force a break)
+       backtrace (or bt)
+       info locals
+       print <variable>
+
+    It would be a good idea to type 'help' once in gdb
+    to figure out what you can do from there, there are also
+    many resources on the web.
+
+------------------------------------------------------------------------------
+
+16. How to create a new channel?
+
+    First add a global channel number in index.h (ex 'gcn_whine').
+    If the channel is not a public channel add an entry to channel_types
+    in defines.h (ex 'spec_whine_flag').  If the channel display requires
+    special formatting, add it to format_channel() in channels.c and
+    validate_chanformat() in olc_act.c.  Create a command function for
+    the channel with a call to public_ch(). (ex Do_Fun(do_whine))  Add an 
+    entry for the command in dofun.h (ex (COMMAND_FUN(whine)).  
+    Compile and copyover/reboot.  In the game type 'chanedit create <name>' 
+    to create the channel and edit.  Add the global channel number. (gcn_whine)
+    Then create the command 'cmdedit create <name>' and add the do_fun pointer.
+
+------------------------------------------------------------------------------
+
+17. How do I create a new jukebox song?
+
+    In the game type 'songedit create <name>' and edit.
+
+------------------------------------------------------------------------------
+
+18. How do I create a new note board?
+
+    Increase MAX_BOARD and add an entry to board_table[] in board.c
+
+------------------------------------------------------------------------------
+
+19. How do I disable/remove the web server?
+
+    If you have a configure script made, run it with --disable-web
+    (ex. ./configure --disable-web)
+
+    Otherwise define DISABLE_WEBSRV either in the Makefile (-DDISABLE_WEBSRV) 
+    or one of the main header files (config.h or merc.h)
+
+    In MSVC++ add ,DISABLE_WEBSRV to the C/C++ preprocessor options.
+
+------------------------------------------------------------------------------
+
+20. How do I use the configure script?
+
+    Running setup.sh will create or recreate a configure script considering
+    your system has autoconf installed.  You can edit the .in files to control
+    what is configured.
+
+    You can reset your configuration by typing 'make resetconfig'.
+
+------------------------------------------------------------------------------
+
+21. How do I backup my stuff?
+
+    If you'd like to have your own backups use the backup script in ../bin.
+    For convienience 'make backup' will backup player/data/area/src files
+    to the ../backup directory.
+
+------------------------------------------------------------------------------
+
+22. How do I fix a 'rom.exe cannot find zlib1.dll' error?
+  
+    Copy the ../lib/zlib1.dll file to your windows directory or the same
+    location as rom.exe.
+
+------------------------------------------------------------------------------
+
+23. How do I fix a 'rom.exe cannot find cygwin1.dll' error?
+
+    Copy the ../lib/cygwin1.dll to your windows directory or the same
+    location as rom.exe.
+
+------------------------------------------------------------------------------
+
+24. Your work is awsome! How can I help??
+
+    Goto http://sourceforge.net/project/project_donations.php?group_id=96911
+    and make a donation!
+
+------------------------------------------------------------------------------
+
+25. How do I report a bug?
+
+    You can post it on the 1stMud Mailing list at firstmud-list@lists.sourceforge.net
+    or go to http://sourceforge.net/tracker/?group_id=96911&atid=616324 and 
+    click on "submit new".
+
+------------------------------------------------------------------------------
+
+26. How do I use CVS / SourceForge.net?
+
+    Use anonymous login to acces the CVS server on cvs.sourceforge.net.
+    The CVS root is /cvsroot/firstmud. The password is your email addess.
+
+    So to login to the CVS server you would type:
+    cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/firstmud login
+
+    The -d flag specifies the CVSROOT.
+
+    Then to get a new copy of 1stMud you would type:
+    cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/firstmud checkout 1stMud
+
+    1stMud is the current module name on the CVS server.
+
+    If developers update the CVS server, you can update your checked out copy by typing:
+    cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/firstmud update
+
+    The ../bin/sfcvs script was added to simplify some of the typing involved.
+
+------------------------------------------------------------------------------

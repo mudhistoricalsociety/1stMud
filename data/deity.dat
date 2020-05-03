@@ -1,0 +1,92 @@
+
+#DEITY
+name			Anubis~
+desc			God of Duty and Judgement.~
+skillname		~
+ethos			lawful-neutral~
+#END
+
+#DEITY
+name			Ares~
+desc			God of Strife and War.~
+skillname		~
+ethos			true-neutral~
+#END
+
+#DEITY
+name			Artemis~
+desc			God of Hunting and Wilderness.~
+skillname		~
+ethos			chaotic-good~
+#END
+
+#DEITY
+name			Bast~
+desc			God of Protection and Vengence.~
+skillname		~
+ethos			chaotic-good~
+#END
+
+#DEITY
+name			Belenus~
+desc			God of Light and Strength.~
+skillname		~
+ethos			lawful-good~
+#END
+
+#DEITY
+name			Carman~
+desc			God of the Night and Sorcery.~
+skillname		~
+ethos			true-neutral~
+#END
+
+#DEITY
+name			Hades~
+desc			God of the Underworld and Death.~
+skillname		~
+ethos			true-neutral~
+#END
+
+#DEITY
+name			Loki~
+desc			God of the Shadows and Thievery.~
+skillname		~
+ethos			true-neutral~
+#END
+
+#DEITY
+name			Morrigan~
+desc			God of Battle and Valour.~
+skillname		~
+ethos			true-neutral~
+#END
+
+#DEITY
+name			Nuada~
+desc			God of Arts and Healing.~
+skillname		~
+ethos			neutral-good~
+#END
+
+#DEITY
+name			Skadi~
+desc			God of Fate and Winter.~
+skillname		~
+ethos			lawful-neutral~
+#END
+
+#DEITY
+name			Taranis~
+desc			God of Beasts and Storms.~
+skillname		~
+ethos			true-neutral~
+#END
+
+#DEITY
+name			Thoth~
+desc			God of Knowledge and Magic.~
+skillname		~
+ethos			true-neutral~
+#END
+#!

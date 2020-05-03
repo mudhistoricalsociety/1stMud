@@ -1,0 +1,77 @@
+#!/bin/sh
+#
+# Smaug Backup script by Dan aka Darkwolf aka Mnementh
+# mudadmin@daisy.goodnet.com
+#
+# Modded for 1stMud by Markanth
+# markanth@firstmud.com
+
+# Set the backup dir. The Path you want the backup files to reside
+
+BDIR=../backup
+
+CDIR=../
+
+# These are the tar flags. Man tar for info on the flags,
+# Default shows verbose output of whats happinin, take v out
+# if you dont like this
+
+EXFLAGS='--exclude='rom' --exclude='*.o' --exclude='*~' --exclude='*.out' --exclude='core''
+TFLAGS='$EXFLAGS -czf'
+
+# Code to add to your Makefile.
+#
+# backup:
+#	./backup clean
+#	./backup all
+
+# Edit this only if tar, mv, or gzip is somewhere wierd :)
+#
+# PATH=/bin:/usr/bin
+
+##################################################################
+# End of user spec's.                                            #
+# Do not edit below this line unless you know what you are doing #
+##################################################################
+
+DATE=`date +%m%d`
+cd $CDIR
+
+case "$1" in
+   all)
+	$0 player
+	$0 area
+	$0 data
+	$0 src
+	echo Done backup all.
+	;;
+   player)
+	FILE=$BDIR/player.$DATE.tar.gz
+	tar $TFLAGS $FILE player
+	echo Done with $FILE.
+	;;
+   area)
+	FILE=$BDIR/area.$DATE.tar.gz
+        tar $TFLAGS $FILE area
+        echo Done with $FILE.
+	;;
+   data)
+	FILE=$BDIR/data.$DATE.tar.gz
+        tar $TFLAGS $FILE data
+        echo Done with $FILE.
+	;;
+   src)
+	FILE=$BDIR/src.$DATE.tar.gz
+        tar $TFLAGS $FILE src
+        echo Done with $FILE.
+	;;
+   clean)
+        rm -rf $BDIR/*.tar.gz
+        echo Done cleaning backups.
+        ;;
+   *)
+	echo "Usage $0 [all|player|area|src|data|clean]"
+	exit 1
+esac
+
+exit 0

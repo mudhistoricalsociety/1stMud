@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+	echo "Syntax: $0 'file extension'"
+	exit 1
+fi
+
+echo "Stripping C/C++ comments from *$1:"
+
+for filex in *$1
+do
+	mv $filex $filex.bak
+	~/remcomments $filex.bak > $filex
+	echo "Stripped $filex..."
+done
+
+echo "Done."
+
+exit 0
+

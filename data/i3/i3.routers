@@ -1,0 +1,25 @@
+
+#ROUTER
+name			*gjs~
+ip			us-1.i3.intermud.org~
+port			9000
+#END
+
+#ROUTER
+name			*arthmoor~
+ip			i3.arthmoor.com~
+port			9900
+#END
+
+#ROUTER
+name			*kenetix~
+ip			i3.kenetix.biz~
+port			9900
+#END
+
+#ROUTER
+name			*redrouter~
+ip			80.75.67.187~
+port			21337
+#END
+#!

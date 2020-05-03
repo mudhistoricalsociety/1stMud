@@ -1,0 +1,50 @@
+1stMud Credits (in no particular order)
+---------------------------------------
+
+* The creators of Rivers of MUD, Merc, and DIKU. (www.rom.org)
+
+* The Dawn Of Time Codebase for so many things. (www.dawnoftime.org)
+
+* Nebseni/ClandestineMUD for their signal handling code. (www.clandestinemud.com)
+
+* Erwin S. Andreasen for the Note Board System, Dual Wielding and Copyover 7.0. (www.andreasen.org)
+
+* Dingo of Purple Dragon MUD for the Telnet Protocol code, Explored Rooms, Automap, most of the
+   client.c stuff and alot of other miscellaneous code.
+
+* Ivan for original OLC v1.81/v2.01, and tablesave stuff. (www.geocities.com/SiliconValley/Pines/9618/)
+
+* Aardwolf, where I saw global quests, multiclassing, ect. (www.aardwolfmud.org)
+
+* First saw 64 bit flags done on Icey Depths(?), anyway its an interesting multi-lingual codebase
+   (ftp.game.org/pub/mud/diku/merc/rom/anatolia/iceydepths).
+
+* Dalsor of AWW WOT Mud for the original player homes code (aww-mud.org).
+
+* Josh Brittenham [Josh.Brittenham@netins.net] for the original war code.
+
+* Doug Araya (Whiplash) [whiplash@tft.nacs.net] for the original arena code (www.bit0.com/~whiplash/).
+
+* Mythran MUD (Maniac) for the economy code (ftp.game.org/pub/mud/diku/merc/envy/mythran).
+
+* Oliver Jowett [oliver@randomly.org] for the MCCP code (www.randomly.org).
+
+* Vassago and the ROM consortium for the original Quest code.
+
+* Rob Siemborski (Defiant) [mud@towers.crusoe.net] with updates by Chris Fewtrell (Trax) 
+   [C.J.Fewtrell@bcs.org.uk] for the web server code found in AFKmud.
+
+* RogueMUD by Kenneth Conley (Mendanbar) [scmud@mad.scientist.com] for parts of the new string editor.
+
+* Room & Object Programs by Ralgha [ralgha@gatewaynight.betterbox.net]
+
+* Hunt skill seems to originally have appeared in SillyMUD Distribution V1.1b.  Ported to Merc by
+   Turtle, modified for ROM by Hidayet Dogan (Baxter) [hdogan@flipper.bitav.org.tr]
+
+* Original Auto-Auction code by Brian Babey [bbabey@iname.com]
+
+* All the users of the ROM Mailing List (www.the-infinite.org/lists/romlist)
+
+* All the users of the 1stMud Mailing List (http://firstmud.com/)
+
+* Sourceforge.net/CompileFarm (http://sourceforge.firstmud.com/)

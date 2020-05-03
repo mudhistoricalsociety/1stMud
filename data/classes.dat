@@ -1,0 +1,98 @@
+6
+
+#CLASS
+name			Mage~ Wizard~ @~
+description		~
+index			class_mage~
+attr_prime		1
+weapon			3701
+skill_adept		75
+thac0_00		20
+thac0_32		6
+hp_min			6
+hp_max			8
+fMana			true
+base_group		mage basics~
+default_group		mage default~
+#END
+
+#CLASS
+name			Cleric~ Priest~ @~
+description		~
+index			class_cleric~
+attr_prime		2
+weapon			3700
+skill_adept		75
+thac0_00		20
+thac0_32		2
+hp_min			7
+hp_max			10
+fMana			true
+base_group		cleric basics~
+default_group		cleric default~
+#END
+
+#CLASS
+name			Thief~ Bandit~ @~
+description		~
+index			class_thief~
+attr_prime		3
+weapon			3701
+skill_adept		75
+thac0_00		20
+thac0_32		-4
+hp_min			8
+hp_max			13
+fMana			false
+base_group		thief basics~
+default_group		thief default~
+#END
+
+#CLASS
+name			Warrior~ Gladiator~ @~
+description		~
+index			class_warrior~
+attr_prime		0
+weapon			3702
+skill_adept		75
+thac0_00		20
+thac0_32		-10
+hp_min			11
+hp_max			15
+fMana			false
+base_group		warrior basics~
+default_group		warrior default~
+#END
+
+#CLASS
+name			Paladin~ Knight~ @~
+description		~
+index			class_paladin~
+attr_prime		2
+weapon			3700
+skill_adept		75
+thac0_00		20
+thac0_32		2
+hp_min			7
+hp_max			10
+fMana			true
+base_group		paladin basics~
+default_group		paladin default~
+#END
+
+#CLASS
+name			Ranger~ Strider~ @~
+description		~
+index			class_ranger~
+attr_prime		0
+weapon			3702
+skill_adept		75
+thac0_00		20
+thac0_32		-10
+hp_min			11
+hp_max			15
+fMana			false
+base_group		ranger basics~
+default_group		ranger default~
+#END
+#!
